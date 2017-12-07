@@ -1,14 +1,22 @@
 import React, { Component } from 'react';
 import './App.css';
+import Block from './components/Block';
+import Columns from './components/Columns';
+import Column from './components/Column';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">Meet Yuval</h1>
-        </header>
-      </div>
+      <Block>
+        <Columns>
+          <Column>
+            
+          </Column>
+          <Column>
+            
+          </Column>
+        </Columns>
+      </Block>
     );
   }
 }
