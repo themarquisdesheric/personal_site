@@ -1,8 +1,8 @@
 import React from 'react';
 
-const Block = (props) => (
+const Block = ({ children }) => (
   <div className="block">
-    {props.children}
+    {children}
   </div>
 );
 
