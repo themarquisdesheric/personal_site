@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Column = ({ children, classes }) => (
+const Column = ({ children, classes = '' }) => (
   <div className={`column ${classes}`}>
     {children}
   </div>
