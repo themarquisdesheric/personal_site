@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
-import './App.css';
+import './App.css'; 
+import FirstRow from './layout/FirstRow';
+import WhenInView from './components/WhenInView';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">Meet Yuval</h1>
-        </header>
+      <div>
+        <FirstRow />
+        <WhenInView />
       </div>
     );
   }

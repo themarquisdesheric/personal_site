@@ -1,0 +1,7 @@
+@import "../node_modules/bulma/sass/utilities/initial-variables";
+@import "../node_modules/bulma/sass/utilities/functions";
+
+$navbar-item-img-max-height: 40px;
+
+@import "../node_modules/bulma/sass/utilities/derived-variables.sass";
+@import "../node_modules/bulma/bulma";
