@@ -5,7 +5,7 @@ import Column from '../components/Column';
 import Hero from '../components/Hero';
 import Image from '../components/Image';
 
-const FirstRow = () => (
+const SecondRow = () => (
   <Block>
     <Columns>
       <Column>
@@ -27,4 +27,4 @@ const FirstRow = () => (
   </Block>
 );
 
-export default FirstRow;
+export default SecondRow;

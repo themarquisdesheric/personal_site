@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
-import './App.css';
+import './App.css'; 
 import FirstRow from './layout/FirstRow';
-import SecondRow from './layout/SecondRow';
+import WhenInView from './components/WhenInView';
 
 class App extends Component {
   render() {
     return (
       <div>
         <FirstRow />
-        <SecondRow />
+        <WhenInView />
       </div>
     );
   }
