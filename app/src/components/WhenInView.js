@@ -18,8 +18,6 @@ class WhenInView extends Component {
   render() {
     return (
 
-      // TODO: classNames
-
       // TODO: get ref, scroll into view view.scrollIntoView({ behavior: 'smooth' })
 
       <div id="view">

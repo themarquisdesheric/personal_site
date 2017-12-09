@@ -17,9 +17,11 @@ const FirstRow = () => (
           <div className="hero-body">
             <div></div>
             <h1 className="title is-1">
-              <h2 className="subtitle has-text-centered">
-                you could say
-              </h2>
+              <div>
+                <h2 className="subtitle has-text-centered">
+                  you could say
+                </h2>
+              </div>
               HE'S GOT VISION
             </h1>
           </div>
