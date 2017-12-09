@@ -3,23 +3,26 @@ import Waypoint from 'react-waypoint';
 import SecondRow from '../layout/SecondRow';
 
 class WhenInView extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      inView: false
-    };
-
-    this.onEnter = this.onEnter.bind(this);
+  state = {
+    inView: false
   }
 
-  onEnter({ previousPosition }) {
+  static propTypes = {
+    
+  }
+
+  onEnter = ({ previousPosition }) => {
     this.setState({ inView: true });
   }
 
   render() {
     return (
-      <div>
+
+      // TODO: classNames
+
+      // TODO: get ref, scroll into view view.scrollIntoView({ behavior: 'smooth' })
+
+      <div id="view">
         <Waypoint onEnter={this.onEnter} />
         {this.state.inView && <SecondRow />}
       </div>
