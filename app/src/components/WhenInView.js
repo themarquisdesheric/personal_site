@@ -5,7 +5,11 @@ import SecondRow from '../layout/SecondRow';
 class WhenInView extends Component {
   state = {
     inView: false
-  };
+  }
+
+  static propTypes = {
+    
+  }
 
   onEnter = ({ previousPosition }) => {
     this.setState({ inView: true });
@@ -13,8 +17,6 @@ class WhenInView extends Component {
 
   render() {
     return (
-
-      // TODO: PropTypes
 
       // TODO: classNames
 
