@@ -3,13 +3,14 @@ import './App.css';
 import FirstRow from './layout/FirstRow';
 import SecondRow from './layout/SecondRow';
 import ThirdRow from './layout/ThirdRow';
+import FourthRow from './layout/FourthRow';
 import Waypoint from 'react-waypoint';
 import PropTypes from 'prop-types';
 
 class App extends Component {
-  scrollToNode = (previousPosition, node) => {
+  scrollToRow = (previousPosition, node) => {
     if (previousPosition === Waypoint.below) {
-      node.scrollIntoView({ behavior: 'smooth' });
+      node.div.scrollIntoView({ behavior: 'smooth' });
     }
   }
 
@@ -17,14 +18,15 @@ class App extends Component {
     return (
       <div>
         <FirstRow />
-        <div ref={row => this.secondRow = row}>
-          <Waypoint onEnter={({ previousPosition }) => this.scrollToNode(previousPosition, this.secondRow)} />
-          <SecondRow />
-        </div>
-        <div ref={row => this.thirdRow = row}>
-          <Waypoint onEnter={({ previousPosition }) => this.scrollToNode(previousPosition, this.thirdRow)} />
-          <ThirdRow />
-        </div>
+
+        <Waypoint onEnter={({ previousPosition }) => this.scrollToRow(previousPosition, this.secondRow)} />
+        <SecondRow ref={row => this.secondRow = row} />
+        
+        <Waypoint onEnter={({ previousPosition }) => this.scrollToRow(previousPosition, this.thirdRow)} />
+        <ThirdRow ref={row => this.thirdRow = row} />
+        
+        <Waypoint onEnter={({ previousPosition }) => this.scrollToRow(previousPosition, this.fourthRow)} />
+        <FourthRow ref={row => this.fourthRow = row} />
       </div>
     );
   }
