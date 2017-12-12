@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
+import Waypoint from 'react-waypoint';
+import PropTypes from 'prop-types';
 import './App.css'; 
 import FirstRow from './layout/FirstRow';
 import SecondRow from './layout/SecondRow';
 import ThirdRow from './layout/ThirdRow';
 import FourthRow from './layout/FourthRow';
-import Waypoint from 'react-waypoint';
-import PropTypes from 'prop-types';
 
 // TODOS: 
 // create owl splash page
