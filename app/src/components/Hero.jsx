@@ -8,7 +8,8 @@ const Hero = ({ children, classes = '' }) => (
 );
 
 Hero.propTypes = {
-  children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
+  classes: PropTypes.string.isRequired
 };
 
 export default Hero;
