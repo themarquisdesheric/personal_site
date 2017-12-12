@@ -7,6 +7,15 @@ import FourthRow from './layout/FourthRow';
 import Waypoint from 'react-waypoint';
 import PropTypes from 'prop-types';
 
+// TODOS: 
+// create owl splash page
+// make open source section left side black, right side white
+// resize and select images, text
+// replace owl navlink with LI / github icons
+// style layout
+// incorporate rest of content: projects/links/contact/map
+// make gif of collatz
+
 class App extends Component {
   scrollToRow = (previousPosition, node) => {
     if (previousPosition === Waypoint.below) {
