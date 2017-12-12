@@ -17,24 +17,26 @@ import FourthRow from './layout/FourthRow';
 // make gif of collatz
 
 class App extends Component {
-  scrollToRow = (previousPosition, node) => {
-    if (previousPosition === Waypoint.below) {
-      node.div.scrollIntoView({ behavior: 'smooth' });
+  scrollToRow = (previousPosition, nodeAbove, nodeBelow) => {
+    if (previousPosition === Waypoint.above) {
+      nodeAbove.div.scrollIntoView({ behavior: 'smooth' });
+    } else if (previousPosition === Waypoint.below) {
+      nodeBelow.div.scrollIntoView({ behavior: 'smooth' });
     }
   }
 
   render() {
     return (
       <div>
-        <FirstRow />
+        <FirstRow ref={row => this.firstRow = row} />
 
-        <Waypoint onEnter={({ previousPosition }) => this.scrollToRow(previousPosition, this.secondRow)} />
+        <Waypoint onEnter={({ previousPosition }) => this.scrollToRow(previousPosition, this.firstRow, this.secondRow)} />
         <SecondRow ref={row => this.secondRow = row} />
         
-        <Waypoint onEnter={({ previousPosition }) => this.scrollToRow(previousPosition, this.thirdRow)} />
+        <Waypoint onEnter={({ previousPosition }) => this.scrollToRow(previousPosition, this.secondRow, this.thirdRow)} />
         <ThirdRow ref={row => this.thirdRow = row} />
         
-        <Waypoint onEnter={({ previousPosition }) => this.scrollToRow(previousPosition, this.fourthRow)} />
+        <Waypoint onEnter={({ previousPosition }) => this.scrollToRow(previousPosition, this.thirdRow, this.fourthRow)} />
         <FourthRow ref={row => this.fourthRow = row} />
       </div>
     );
