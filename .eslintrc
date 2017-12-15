@@ -10,8 +10,15 @@
       "es6": true,
       "browser": true
   },
-  "extends": ["eslint:recommended", "react-app"],
+  "extends": ["airbnb", "eslint:recommended", "react-app"],
+  "plugins": [
+      "react",
+      "jsx-a11y",
+      "import"
+  ],
   "rules": {
+      "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+      "jsx-a11y/href-no-hash": "off", 
       "no-console": "warn",
       "indent": [
           "error",
