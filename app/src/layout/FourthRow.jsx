@@ -5,7 +5,7 @@ import Column from '../components/Column';
 import Hero from '../components/Hero';
 import Image from '../components/Image';
 
-class ThirdRow extends Component {
+class FourthRow extends Component {
   render() {
     return (
       <div ref={node => this.div = node}>
@@ -41,4 +41,4 @@ class ThirdRow extends Component {
   }
 }
 
-export default ThirdRow;
+export default FourthRow;
