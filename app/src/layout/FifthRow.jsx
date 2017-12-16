@@ -5,7 +5,7 @@ import Column from '../components/Column';
 import Hero from '../components/Hero';
 import Image from '../components/Image';
 
-class SecondRow extends Component {
+class FifthRow extends Component {
   render() {
     return (
       <div ref={node => this.div = node}>
@@ -16,10 +16,18 @@ class SecondRow extends Component {
                 <div className="hero-body">
                   <div>
                     <p className="subtitle has-text-centered">
-                      a web developer who has
+                      and has turned the
+                      <a 
+                        href="https://en.wikipedia.org/wiki/Collatz_conjecture" 
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        &nbsp;Collatz Conjecture&nbsp;
+                      </a>
+                      into a
                     </p>
                     <p className="title is-uppercase is-1">
-                      worn many hats
+                      melody machine
                     </p>
                   </div>
                 </div>
@@ -27,7 +35,7 @@ class SecondRow extends Component {
             </Column>
             <Column classes="is-paddingless">
               <Image>
-                <img src="https://placehold.it/768x858/ff0000/" alt="yuval-orange-hat" />
+                <img src="https://placehold.it/768x858/000000/" alt="collatz" />
               </Image>
             </Column>
           </Columns>
@@ -37,4 +45,4 @@ class SecondRow extends Component {
   }
 }
 
-export default SecondRow;
+export default FifthRow;

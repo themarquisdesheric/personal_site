@@ -14,14 +14,14 @@ class ThirdRow extends Component {
             <Column>
               <Hero classes="is-fullheight">
                 <div className="hero-body">
-                  <h1 className="title is-1">
-                    <div>
-                      <h2 className="subtitle has-text-centered">
-                        subtitle
-                      </h2>
-                    </div>
-                    FOURTH ROW
-                  </h1>
+                  <div>
+                    <p className="subtitle has-text-centered">
+                      he has contributed to
+                    </p>
+                    <p className="title is-uppercase is-1">
+                      open source
+                    </p>
+                  </div>
                 </div>
               </Hero>
             </Column>
@@ -29,10 +29,7 @@ class ThirdRow extends Component {
               <Hero classes="is-fullheight is-dark">
                 <div className="hero-body">
                   <Image>
-                    <img src="https://www.apache.org/foundation/press/kit/feather.png" alt="apache-feather" />
-
-                    {/* set width to ~ 400px for the feather */}
-
+                    <img src="https://www.apache.org/foundation/press/kit/feather.png" alt="apache-feather" style={{width: 400}} />
                   </Image>
                 </div>
               </Hero>
