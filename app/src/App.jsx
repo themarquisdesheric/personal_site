@@ -11,9 +11,14 @@ import SixthRow from './layout/SixthRow';
 import SeventhRow from './layout/SeventhRow';
 
 // TODOS: 
+
+// use gradient as class for lower section content
+// use google map screenshot instead - faster loading
+
 // make open source section left side black, right side white - or switch to black for lower rows / switch content side
 // incorporate rest of content: linkedin certifications, etc
 // make gif of collatz
+// remove unused components and refactor style attributes
 
 class App extends Component {
   scrollToRow = (previousPosition, nodeAbove, nodeBelow) => {

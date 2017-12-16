@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Columns = ({ children }) => (
-  <div className="columns">
+  <div className="columns is-gapless">
     {children}
   </div>
 );

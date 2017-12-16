@@ -5,14 +5,14 @@ import Column from '../components/Column';
 import Hero from '../components/Hero';
 import Image from '../components/Image';
 
-class ThirdRow extends Component {
+class FourthRow extends Component {
   render() {
     return (
       <div ref={node => this.div = node}>
         <Block>
           <Columns>
             <Column>
-              <Hero classes="is-fullheight">
+              <Hero classes="is-fullheight is-dark is-bold">
                 <div className="hero-body">
                   <div>
                     <p className="subtitle has-text-centered">
@@ -41,4 +41,4 @@ class ThirdRow extends Component {
   }
 }
 
-export default ThirdRow;
+export default FourthRow;

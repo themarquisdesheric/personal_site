@@ -12,7 +12,7 @@ class FifthRow extends Component {
         <Block>
           <Columns>
             <Column>
-              <Hero classes="is-fullheight">
+              <Hero classes="is-fullheight is-dark is-bold">
                 <div className="hero-body">
                   <div>
                     <p className="subtitle has-text-centered">
