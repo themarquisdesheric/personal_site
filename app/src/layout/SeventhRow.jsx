@@ -10,14 +10,14 @@ class SeventhRow extends Component {
       <div ref={node => this.div = node}>
         <Block>
           <Columns>
-            <Column>
-              <Hero classes="is-fullheight is-dark is-bold">
+            <Column classes="dark-background">
+              <Hero classes="is-fullheight">
                 <div className="hero-body">
                   <div>
-                    <p className="subtitle has-text-centered">
+                    <p className="subtitle has-text-centered has-text-light">
                       get
                     </p>
-                    <p className="title is-uppercase is-1">
+                    <p className="title is-uppercase is-1 has-text-light">
                       in touch
                     </p>
                   </div>
@@ -25,7 +25,7 @@ class SeventhRow extends Component {
               </Hero>
             </Column>
             <Column classes="is-paddingless">
-              <div class="map-responsive">
+              <div className="map-responsive">
                 <iframe 
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d178838.2773407469!2d-122.79450557331654!3d45.54332289210889!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54950b0b7da97427%3A0x1c36b9e6f6d18591!2sPortland%2C+OR!5e0!3m2!1sen!2sus!4v1513453910848" 
                   width="712.5" 

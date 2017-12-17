@@ -11,14 +11,14 @@ class SixthRow extends Component {
       <div ref={node => this.div = node}>
         <Block>
           <Columns>
-            <Column>
-              <Hero classes="is-fullheight is-dark is-bold">
+            <Column classes="dark-background">
+              <Hero classes="is-fullheight">
                 <div className="hero-body">
                   <div>
-                    <p className="subtitle has-text-centered">
+                    <p className="subtitle has-text-centered has-text-light">
                       which brings us to an important point
                     </p>
-                    <p className="title is-uppercase is-1">
+                    <p className="title is-uppercase is-1 has-text-light">
                       who is yuval?
                     </p>
                   </div>
