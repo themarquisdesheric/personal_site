@@ -3,6 +3,7 @@ import Block from '../components/Block';
 import Columns from '../components/Columns';
 import Column from '../components/Column';
 import Hero from '../components/Hero';
+import Message from '../components/Message';
 import Image from '../components/Image';
 
 class FirstRow extends Component {
@@ -13,24 +14,12 @@ class FirstRow extends Component {
           <Columns>
             <Column>
               <Hero classes="is-fullheight">
-                <div className="hero-head">
-                  {/* Real life stories &#8470; 1 */}
-                </div>
-                <div className="hero-body">
-                  <div>
-                    <p className="subtitle has-text-centered">
-                      meet
-                    </p>
-                    <p className="title is-uppercase is-1">
-                      yuval
-                    </p>
-                  </div>
-                </div>
+                <Message italic="meet" normal="yuval" />
               </Hero>
             </Column>
             <Column classes="is-paddingless">
               <Image>
-                <img src="https://placehold.it/768x858/000000/" alt="yuval-leaves" />
+                <img src="yuval-leaves.jpg" alt="yuval-leaves" />
               </Image>
             </Column>
           </Columns>
