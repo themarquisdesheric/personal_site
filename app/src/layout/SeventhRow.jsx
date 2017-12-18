@@ -3,6 +3,7 @@ import Block from '../components/Block';
 import Columns from '../components/Columns';
 import Column from '../components/Column';
 import Hero from '../components/Hero';
+import Message from '../components/Message';
 
 class SeventhRow extends Component {
   render() {
@@ -12,16 +13,7 @@ class SeventhRow extends Component {
           <Columns>
             <Column classes="dark-background">
               <Hero classes="is-fullheight">
-                <div className="hero-body">
-                  <div className="block-titles">
-                    <h2 className="is-size-5-mobile has-text-centered has-text-light italic-text">
-                      get
-                    </h2>
-                    <h1 className="is-size-1-mobile has-text-centered-mobile has-text-light normal-text">
-                      in touch
-                    </h1>
-                  </div>
-                </div>
+                <Message italic="get" normal="in touch" classes="has-text-light" />
               </Hero>
             </Column>
             <Column classes="is-paddingless">

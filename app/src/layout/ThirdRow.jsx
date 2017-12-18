@@ -3,6 +3,7 @@ import Block from '../components/Block';
 import Columns from '../components/Columns';
 import Column from '../components/Column';
 import Hero from '../components/Hero';
+import Message from '../components/Message';
 import Image from '../components/Image';
 
 class ThirdRow extends Component {
@@ -13,16 +14,7 @@ class ThirdRow extends Component {
           <Columns>
             <Column>
               <Hero classes="is-fullheight">
-                <div className="hero-body">
-                  <div className="block-titles">
-                    <h2 className="is-size-5-mobile has-text-centered italic-text">
-                      you could say he
-                    </h2>
-                    <h1 className="is-size-1-mobile has-text-centered-mobile normal-text">
-                      has vision
-                    </h1>
-                  </div>
-                </div>
+                <Message italic="people have said he" normal="has vision" />
               </Hero>
             </Column>
             <Column classes="is-paddingless">

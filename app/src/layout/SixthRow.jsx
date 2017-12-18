@@ -3,6 +3,7 @@ import Block from '../components/Block';
 import Columns from '../components/Columns';
 import Column from '../components/Column';
 import Hero from '../components/Hero';
+import Message from '../components/Message';
 import Image from '../components/Image';
 
 class SixthRow extends Component {
@@ -13,15 +14,14 @@ class SixthRow extends Component {
           <Columns>
             <Column classes="dark-background">
               <Hero classes="is-fullheight">
-                <div className="hero-body">
+   
+                <Message italic="" normal="" />
                   
                 {/* always coding
                 
                   github
 
                 */}
-
-                </div>
               </Hero>
             </Column>
             <Column classes="is-paddingless">
