@@ -13,7 +13,7 @@ import Bio from './layout/Bio';
 
 // TODOS: 
 
-// checker black and white tiles for bottom portion?
+// switch default font
 
 // use google map screenshot instead - faster loading
 // incorporate rest of content: linkedin certifications, etc
