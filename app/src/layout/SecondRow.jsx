@@ -14,20 +14,20 @@ class SecondRow extends Component {
             <Column>
               <Hero classes="is-fullheight">
                 <div className="hero-body">
-                  <div>
-                    <p className="subtitle has-text-centered">
+                  <div className="block-titles">
+                    <h2 className="is-size-5-mobile has-text-centered italic-text">
                       a web developer who has
-                    </p>
-                    <p className="title is-uppercase is-1">
+                    </h2>
+                    <h1 className="is-size-1-mobile has-text-centered-mobile normal-text">
                       worn many hats
-                    </p>
+                    </h1>
                   </div>
                 </div>
               </Hero>
             </Column>
             <Column classes="is-paddingless">
               <Image>
-                <img src="https://placehold.it/768x858/ff0000/" alt="yuval-orange-hat" />
+                <img src="yuval-orange-hat.jpg" alt="yuval-orange-hat" />
               </Image>
             </Column>
           </Columns>

@@ -14,20 +14,20 @@ class ThirdRow extends Component {
             <Column>
               <Hero classes="is-fullheight">
                 <div className="hero-body">
-                  <div>
-                    <p className="subtitle has-text-centered">
-                      you could say he is
-                    </p>
-                    <p className="title is-uppercase is-1">
-                      artsy yet refined
-                    </p>
+                  <div className="block-titles">
+                    <h2 className="is-size-5-mobile has-text-centered italic-text">
+                      you could say he
+                    </h2>
+                    <h1 className="is-size-1-mobile has-text-centered-mobile normal-text">
+                      has vision
+                    </h1>
                   </div>
                 </div>
               </Hero>
             </Column>
             <Column classes="is-paddingless">
               <Image>
-                <img src="https://placehold.it/768x858/ffff00/" alt="img" />
+                <img src="yuval-fake-fur.jpg" alt="yuval-fake-fur" />
               </Image>
             </Column>
           </Columns>

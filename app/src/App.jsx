@@ -9,13 +9,13 @@ import FourthRow from './layout/FourthRow';
 import FifthRow from './layout/FifthRow';
 import SixthRow from './layout/SixthRow';
 import SeventhRow from './layout/SeventhRow';
+import Bio from './layout/Bio';
 
 // TODOS: 
 
-// use gradient as class for lower section content
-// use google map screenshot instead - faster loading
+// checker black and white tiles for bottom portion?
 
-// make open source section left side black, right side white - or switch to black for lower rows / switch content side
+// use google map screenshot instead - faster loading
 // incorporate rest of content: linkedin certifications, etc
 // make gif of collatz
 // remove unused components and refactor style attributes
@@ -45,9 +45,11 @@ class App extends Component {
         
         <Waypoint onEnter={({ previousPosition }) => this.scrollToRow(previousPosition, this.fourthRow, this.fifthRow)} />
         <FifthRow ref={row => this.fifthRow = row} />
-        
+ 
         <Waypoint onEnter={({ previousPosition }) => this.scrollToRow(previousPosition, this.fifthRow, this.sixthRow)} />
         <SixthRow ref={row => this.sixthRow = row} />
+       
+        <Bio />
         
         <Waypoint onEnter={({ previousPosition }) => this.scrollToRow(previousPosition, this.sixthRow, this.seventhRow)} />
         <SeventhRow ref={row => this.seventhRow = row} />

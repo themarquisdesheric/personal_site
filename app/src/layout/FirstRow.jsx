@@ -17,20 +17,20 @@ class FirstRow extends Component {
                   {/* Real life stories &#8470; 1 */}
                 </div>
                 <div className="hero-body">
-                  <div>
-                    <p className="subtitle has-text-centered">
+                  <div className="block-titles">
+                    <h2 className="is-size-5-mobile has-text-centered italic-text">
                       meet
-                    </p>
-                    <p className="title is-uppercase is-1">
+                    </h2>
+                    <h1 className="is-size-1-mobile has-text-centered-mobile has-text-centered-mobile normal-text">
                       yuval
-                    </p>
+                    </h1>
                   </div>
                 </div>
               </Hero>
             </Column>
             <Column classes="is-paddingless">
               <Image>
-                <img src="https://placehold.it/768x858/000000/" alt="yuval-leaves" />
+                <img src="yuval-leaves.jpg" alt="yuval-leaves" />
               </Image>
             </Column>
           </Columns>

@@ -13,13 +13,13 @@ class SeventhRow extends Component {
             <Column classes="dark-background">
               <Hero classes="is-fullheight">
                 <div className="hero-body">
-                  <div>
-                    <p className="subtitle has-text-centered has-text-light">
+                  <div className="block-titles">
+                    <h2 className="is-size-5-mobile has-text-centered has-text-light italic-text">
                       get
-                    </p>
-                    <p className="title is-uppercase is-1 has-text-light">
+                    </h2>
+                    <h1 className="is-size-1-mobile has-text-centered-mobile has-text-light normal-text">
                       in touch
-                    </p>
+                    </h1>
                   </div>
                 </div>
               </Hero>

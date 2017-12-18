@@ -14,21 +14,23 @@ class SixthRow extends Component {
             <Column classes="dark-background">
               <Hero classes="is-fullheight">
                 <div className="hero-body">
-                  <div>
-                    <p className="subtitle has-text-centered has-text-light">
-                      which brings us to an important point
-                    </p>
-                    <p className="title is-uppercase is-1 has-text-light">
-                      who is yuval?
-                    </p>
-                  </div>
+                  
+                {/* always coding
+                
+                  github
+
+                */}
+
                 </div>
               </Hero>
             </Column>
             <Column classes="is-paddingless">
-              <Image>
-                <img src="https://placehold.it/768x858/ff00ff/" alt="collatz" />
-              </Image>
+           
+                {/* always learning
+                
+                  linkedin
+                */}
+           
             </Column>
           </Columns>
         </Block>
