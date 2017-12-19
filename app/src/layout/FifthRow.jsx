@@ -11,11 +11,11 @@ class FifthRow extends Component {
       <div ref={node => this.div = node}>
         <Block>
           <Columns>
-            <Column classes="dark-background">
+            <Column>
               <Hero classes="is-fullheight">
                 <div className="hero-body">
                   <div className="content has-text-centered">
-                    <h2 className="is-size-5-mobile has-text-light italic-text">
+                    <h2 className="is-size-5-mobile italic-text">
                       and turned the
                       <a 
                         href="https://en.wikipedia.org/wiki/Collatz_conjecture" 
@@ -26,7 +26,7 @@ class FifthRow extends Component {
                       </a>
                       into a
                     </h2>
-                    <h1 className="is-size-1-mobile has-text-light normal-text is-marginless">
+                    <h1 className="is-size-1-mobile normal-text is-marginless">
                       melody machine
                     </h1>
                   </div>

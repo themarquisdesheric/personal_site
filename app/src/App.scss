@@ -36,6 +36,12 @@ $navbar-item-img-max-height: 40px;
   font-weight: 900;
 }
 
+.bio::before {
+  // this fixes a scrolling bug by rendering as a newline
+  white-space: pre-wrap;
+  content: "\A";
+}
+
 .map-responsive {
   overflow: hidden;
   padding-bottom: 100%;

@@ -11,8 +11,6 @@ import EighthRow from './layout/EighthRow';
 
 // TODOS: 
 
-// switch default font
-
 // use google map screenshot instead - faster loading
 // incorporate rest of content: linkedin certifications, etc
 // make gif of collatz
@@ -59,15 +57,18 @@ class App extends Component {
           textColor="has-text-light"
           ref={row => this.thirdRow = row} 
         />
-        
+
         <Waypoint onEnter={({ previousPosition }) => this.scrollToRow(previousPosition, this.thirdRow, this.fourthRow)} />
-        <FourthRow ref={row => this.fourthRow = row} />
+        <Bio ref={row => this.fourthRow = row} />
         
         <Waypoint onEnter={({ previousPosition }) => this.scrollToRow(previousPosition, this.fourthRow, this.fifthRow)} />
-        <FifthRow ref={row => this.fifthRow = row} />
- 
+        <FourthRow ref={row => this.fifthRow = row} />
+        
         <Waypoint onEnter={({ previousPosition }) => this.scrollToRow(previousPosition, this.fifthRow, this.sixthRow)} />
-        <Bio ref={row => this.sixthRow = row} />
+        <FifthRow ref={row => this.sixthRow = row} />
+ 
+        {/* <Waypoint onEnter={({ previousPosition }) => this.scrollToRow(previousPosition, this.fifthRow, this.sixthRow)} />
+        <Bio ref={row => this.sixthRow = row} /> */}
         
         <Waypoint onEnter={({ previousPosition }) => this.scrollToRow(previousPosition, this.sixthRow, this.seventhRow)} />
         <SeventhRow ref={row => this.seventhRow = row} />
