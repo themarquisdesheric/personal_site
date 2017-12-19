@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 
 const Message = ({ italic, normal, classes = '' }) => (
   <div className="hero-body">
-    <div className="block-titles">
-      <h2 className={`is-size-5-mobile has-text-centered italic-text ${classes}`}>
+    <div className="content has-text-centered">
+      <h2 className={`is-size-5-mobile italic-text ${classes}`}>
         {italic}
       </h2>
-      <h1 className={`is-size-1-mobile has-text-centered-mobile has-text-centered-mobile normal-text ${classes}`}>
+      <h1 className={`is-size-1-mobile normal-text is-marginless ${classes}`}>
         {normal}
       </h1>
     </div>

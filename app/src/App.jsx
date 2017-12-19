@@ -2,18 +2,14 @@ import React, { Component } from 'react';
 import Waypoint from 'react-waypoint';
 import PropTypes from 'prop-types';
 import './App.css'; 
-import FirstRow from './layout/FirstRow';
-import SecondRow from './layout/SecondRow';
-import ThirdRow from './layout/ThirdRow';
+import ComposeImageRow from './components/ComposeImageRow';
 import FourthRow from './layout/FourthRow';
 import FifthRow from './layout/FifthRow';
-import SixthRow from './layout/SixthRow';
-import SeventhRow from './layout/SeventhRow';
 import Bio from './layout/Bio';
+import SeventhRow from './layout/SeventhRow';
+import EighthRow from './layout/EighthRow';
 
 // TODOS: 
-
-// checker black and white tiles for bottom portion?
 
 // use google map screenshot instead - faster loading
 // incorporate rest of content: linkedin certifications, etc
@@ -32,27 +28,53 @@ class App extends Component {
   render() {
     return (
       <div>
-        <FirstRow ref={row => this.firstRow = row} />
+        <ComposeImageRow 
+          smallText="meet"
+          largeText="yuval"
+          src="yuval-leaves.jpg"
+          alt="yuval-leaves"
+          theme="dark-background"
+          textColor="has-text-light"
+          ref={row => this.firstRow = row} 
+        />
 
         <Waypoint onEnter={({ previousPosition }) => this.scrollToRow(previousPosition, this.firstRow, this.secondRow)} />
-        <SecondRow ref={row => this.secondRow = row} />
+        <ComposeImageRow
+          smallText="a web developer who has"
+          largeText="worn many hats"
+          src="yuval-orange-hat.jpg"
+          alt="yuval-orange-hat"
+          ref={row => this.secondRow = row} 
+        />
         
         <Waypoint onEnter={({ previousPosition }) => this.scrollToRow(previousPosition, this.secondRow, this.thirdRow)} />
-        <ThirdRow ref={row => this.thirdRow = row} />
-        
+        <ComposeImageRow 
+          smallText="you could say he"
+          largeText="has vision"
+          src="yuval-fake-fur.jpg"
+          alt="yuval-fake-fur"
+          theme="dark-background"
+          textColor="has-text-light"
+          ref={row => this.thirdRow = row} 
+        />
+
         <Waypoint onEnter={({ previousPosition }) => this.scrollToRow(previousPosition, this.thirdRow, this.fourthRow)} />
-        <FourthRow ref={row => this.fourthRow = row} />
+        <Bio ref={row => this.fourthRow = row} />
         
         <Waypoint onEnter={({ previousPosition }) => this.scrollToRow(previousPosition, this.fourthRow, this.fifthRow)} />
-        <FifthRow ref={row => this.fifthRow = row} />
- 
+        <FourthRow ref={row => this.fifthRow = row} />
+        
         <Waypoint onEnter={({ previousPosition }) => this.scrollToRow(previousPosition, this.fifthRow, this.sixthRow)} />
-        <SixthRow ref={row => this.sixthRow = row} />
-       
-        <Bio />
+        <FifthRow ref={row => this.sixthRow = row} />
+ 
+        {/* <Waypoint onEnter={({ previousPosition }) => this.scrollToRow(previousPosition, this.fifthRow, this.sixthRow)} />
+        <Bio ref={row => this.sixthRow = row} /> */}
         
         <Waypoint onEnter={({ previousPosition }) => this.scrollToRow(previousPosition, this.sixthRow, this.seventhRow)} />
         <SeventhRow ref={row => this.seventhRow = row} />
+
+        <Waypoint onEnter={({ previousPosition }) => this.scrollToRow(previousPosition, this.seventhRow, this.eighthRow)} />
+        <EighthRow ref={row => this.eighthRow = row} />
       </div>
     );
   }

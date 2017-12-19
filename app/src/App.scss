@@ -13,23 +13,33 @@ $navbar-item-img-max-height: 40px;
   // #333 and #272727 are good too
 }
 
-.block-titles {
-  padding-left: 4.5em;
+.content, .section {
+  margin: auto;
+}
+
+.content h1 {
+  font-size: 4em;
+}
+
+.content h2 {
+  font-size: 1.5em;
 }
 
 .italic-text {
   font-family: 'Playfair Display', serif;
   font-style: italic;
   font-weight: 700;
-  font-size: 1.5em;
 }
 
 .normal-text {
   font-family: 'Playfair Display', serif;
-  font-size: 4em;
   font-weight: 900;
-  position: relative;
-  bottom: 0.2em;
+}
+
+.bio::before {
+  // this fixes a scrolling bug by rendering as a newline
+  white-space: pre-wrap;
+  content: "\A";
 }
 
 .map-responsive {

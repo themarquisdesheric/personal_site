@@ -6465,3 +6465,41 @@ label.panel-block {
 .footer {
   background-color: whitesmoke;
   padding: 3rem 1.5rem 6rem; }
+
+.dark-background {
+  background-image: linear-gradient(141deg, black 0%, #0a0a0a 71%, #181616 100%); }
+
+.content, .section {
+  margin: auto; }
+
+.content h1 {
+  font-size: 4em; }
+
+.content h2 {
+  font-size: 1.5em; }
+
+.italic-text {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-weight: 700; }
+
+.normal-text {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900; }
+
+.bio::before {
+  white-space: pre-wrap;
+  content: "\A"; }
+
+.map-responsive {
+  overflow: hidden;
+  padding-bottom: 100%;
+  position: relative;
+  height: 0; }
+
+.map-responsive iframe {
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute; }
