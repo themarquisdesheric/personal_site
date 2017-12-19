@@ -12,9 +12,9 @@ class FourthRow extends Component {
       <div ref={node => this.div = node}>
         <Block>
           <Columns>
-            <Column classes="dark-background">
+            <Column>
               <Hero classes="is-fullheight">
-                <Message italic="he has contributed to" normal="open source" classes="has-text-light" />
+                <Message italic="he has contributed to" normal="open source" />
               </Hero>
             </Column>
             <Column classes="is-paddingless">

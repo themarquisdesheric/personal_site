@@ -35,7 +35,7 @@ class FifthRow extends Component {
             </Column>
             <Column classes="is-paddingless">
               <Image>
-                <img src="https://placehold.it/768x858/ffffff/" alt="collatz" />
+                <img src="https://placehold.it/768x858/000000/" alt="collatz" />
               </Image>
             </Column>
           </Columns>

@@ -15,7 +15,7 @@ class Bio extends Component {
                 <div className="hero-body">
                   <section className="section">
                     <div className="content has-text-centered">
-                      <h1 className="is-size-1-mobile has-text-centered-mobile normal-text">
+                      <h1 className="is-size-1-mobile has-text-centered-mobile normal-text" >
                         so who is yuval?
                       </h1>
                       <p className="has-text-justified">
@@ -27,7 +27,14 @@ class Bio extends Component {
 
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus a, harum ipsam dicta sapiente<br />
                           aliquam magnam eaque assumenda dignissimos voluptatibus, quibusdam temporibus, nesciunt optio<br />
-                          autem quo sequi cum consequatur culpa?
+                          autem quo sequi cum consequatur culpa?<br />
+                          autem quo sequi cum consequatur culpa?<br />
+                          autem quo sequi cum consequatur culpa?<br />
+                          autem quo sequi cum consequatur culpa?<br />
+                          autem quo sequi cum consequatur culpa?<br />
+                          autem quo sequi cum consequatur culpa?<br />
+                          autem quo sequi cum consequatur culpa?<br />
+                          autem quo sequi cum consequatur culpa?<br />
                       </p>
                     </div>
                   </section>
