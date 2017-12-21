@@ -3,8 +3,9 @@ import Waypoint from 'react-waypoint';
 import PropTypes from 'prop-types';
 import './App.css'; 
 import ComposeImageRow from './components/ComposeImageRow';
-import FourthRow from './layout/FourthRow';
-import FifthRow from './layout/FifthRow';
+import ComposeCardRow from './components/ComposeCardRow';
+import ApacheText from './components/ApacheText';
+import CollatzText from './components/CollatzText';
 import Bio from './layout/Bio';
 import SeventhRow from './layout/SeventhRow';
 import EighthRow from './layout/EighthRow';
@@ -13,7 +14,7 @@ import EighthRow from './layout/EighthRow';
 
 // use google map screenshot instead - faster loading
 // incorporate rest of content: linkedin certifications, etc
-// make gif of collatz
+// make favicon
 // remove unused components and refactor style attributes
 
 class App extends Component {
@@ -31,8 +32,7 @@ class App extends Component {
         <ComposeImageRow 
           smallText="meet"
           largeText="yuval"
-          src="yuval-leaves.jpg"
-          alt="yuval-leaves"
+          src="yuval-leaves"
           theme="dark-background"
           textColor="has-text-light"
           ref={row => this.firstRow = row} 
@@ -42,8 +42,7 @@ class App extends Component {
         <ComposeImageRow
           smallText="a web developer who has"
           largeText="worn many hats"
-          src="yuval-orange-hat.jpg"
-          alt="yuval-orange-hat"
+          src="yuval-orange-hat"
           ref={row => this.secondRow = row} 
         />
         
@@ -51,8 +50,7 @@ class App extends Component {
         <ComposeImageRow 
           smallText="you could say he"
           largeText="has vision"
-          src="yuval-fake-fur.jpg"
-          alt="yuval-fake-fur"
+          src="yuval-fake-fur"
           theme="dark-background"
           textColor="has-text-light"
           ref={row => this.thirdRow = row} 
@@ -62,14 +60,35 @@ class App extends Component {
         <Bio ref={row => this.fourthRow = row} />
         
         <Waypoint onEnter={({ previousPosition }) => this.scrollToRow(previousPosition, this.fourthRow, this.fifthRow)} />
-        <FourthRow ref={row => this.fifthRow = row} />
+        <ComposeCardRow 
+          smallText="he has contributed to"
+          largeText="open source"
+          title="Apache DataFu"
+          href="https://datafu.incubator.apache.org/"
+          src="apache-feather.png"
+          theme="dark-background"
+          textColor="has-text-light"
+          classes="apache"
+          ref={row => this.fifthRow = row} 
+        >
+          <ApacheText />
+        </ComposeCardRow>
         
         <Waypoint onEnter={({ previousPosition }) => this.scrollToRow(previousPosition, this.fifthRow, this.sixthRow)} />
-        <FifthRow ref={row => this.sixthRow = row} />
+        <ComposeCardRow 
+          smallText="and turned the collatz conjecture into a"
+          largeText="melody machine"
+          title="Collatz Music"
+          href="https://themarquisdesheric.github.io/collatz-conjecture-music/"
+          src="collatz.gif"
+          theme="dark-background"
+          textColor="has-text-light"
+          classes="collatz"
+          ref={row => this.sixthRow = row} 
+        >
+          <CollatzText />
+        </ComposeCardRow>
  
-        {/* <Waypoint onEnter={({ previousPosition }) => this.scrollToRow(previousPosition, this.fifthRow, this.sixthRow)} />
-        <Bio ref={row => this.sixthRow = row} /> */}
-        
         <Waypoint onEnter={({ previousPosition }) => this.scrollToRow(previousPosition, this.sixthRow, this.seventhRow)} />
         <SeventhRow ref={row => this.seventhRow = row} />
 
