@@ -20,7 +20,7 @@ const Card = ({ title, href, src, classes, darkSide, children }) => (
           href={href}
           target="_blank"
           rel="noopener noreferrer"
-          className={darkSide === 'right' ? 'has-text-light' : ''}
+          className={darkSide === 'right' ? 'light-title' : ''}
         >
           {title}
         </a>

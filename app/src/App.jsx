@@ -93,8 +93,8 @@ class App extends Component {
         <ComposeCardRow 
           smallText="contact"
           largeText="yuval"
-          title="Portland, OR"
-          href="https://www.google.com/maps/@45.5293304,-122.677989,12.26"
+          title="themarquisdesheric@gmail.com"
+          href="mailto:themarquisdesheric@gmail.com"
           src="portland.png"
           darkSide="right"
           classes="contact"
