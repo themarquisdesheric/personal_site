@@ -6,16 +6,15 @@ import ComposeImageRow from './components/ComposeImageRow';
 import ComposeCardRow from './components/ComposeCardRow';
 import ApacheText from './components/ApacheText';
 import CollatzText from './components/CollatzText';
-import Bio from './layout/Bio';
+import Bio from './components/Bio';
 import SeventhRow from './layout/SeventhRow';
-import EighthRow from './layout/EighthRow';
 
 // TODOS: 
 
-// use google map screenshot instead - faster loading
 // incorporate rest of content: linkedin certifications, etc
 // make favicon
 // remove unused components and refactor style attributes
+// try subtle bio animation
 
 class App extends Component {
   scrollToRow = (previousPosition, nodeAbove, nodeBelow) => {
@@ -66,8 +65,7 @@ class App extends Component {
           title="Apache DataFu"
           href="https://datafu.incubator.apache.org/"
           src="apache-feather.png"
-          theme="dark-background"
-          textColor="has-text-light"
+          darkSide="left"
           classes="apache"
           ref={row => this.fifthRow = row} 
         >
@@ -81,8 +79,7 @@ class App extends Component {
           title="Collatz Music"
           href="https://themarquisdesheric.github.io/collatz-conjecture-music/"
           src="collatz.gif"
-          theme="dark-background"
-          textColor="has-text-light"
+          darkSide="right"
           classes="collatz"
           ref={row => this.sixthRow = row} 
         >
@@ -93,7 +90,21 @@ class App extends Component {
         <SeventhRow ref={row => this.seventhRow = row} />
 
         <Waypoint onEnter={({ previousPosition }) => this.scrollToRow(previousPosition, this.seventhRow, this.eighthRow)} />
-        <EighthRow ref={row => this.eighthRow = row} />
+        <ComposeCardRow 
+          smallText="contact"
+          largeText="yuval"
+          title="Portland, OR"
+          href="https://www.google.com/maps/@45.5293304,-122.677989,12.26"
+          src="portland.png"
+          darkSide="right"
+          classes="contact"
+          ref={row => this.eighthRow = row} 
+        >
+          <div>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo impedit excepturi quaerat voluptates provident, sequi praesentium illum facere, laborum mollitia necessitatibus! Accusantium reiciendis, aliquid similique doloribus dicta explicabo! Natus, ipsam.
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias sit, hic quam accusantium harum, vero nihil 
+          </div>
+        </ComposeCardRow>
       </div>
     );
   }

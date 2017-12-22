@@ -14,6 +14,8 @@ const CollatzText = () => (
 
     This is a tool I wrote to help people better understand it
     by providing an audio/visual representation of each sequence.
+
+    The project was inspired by wondering if the resulting melody would sound like a slide whistle.
   </div>
 );
 

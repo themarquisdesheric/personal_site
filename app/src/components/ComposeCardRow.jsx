@@ -7,21 +7,21 @@ import Hero from '../components/Hero';
 import Message from '../components/Message';
 import Card from '../components/Card';
 
-class ComposeImageRow extends Component {
+class ComposeCardRow extends Component {
   render() {
     
-    const { smallText, largeText, title, href, src, theme, textColor, classes, children } = this.props;
+    const { smallText, largeText, title, href, src, darkSide, classes, children } = this.props;
 
     return (
       <div ref={node => this.div = node}>
         <Block>
           <Columns>
-            <Column classes="dark-background">
+            <Column classes={darkSide === 'left' ? 'dark-background' : ''}>
               <Hero classes="is-fullheight">
-                <Message italic={smallText} normal={largeText} classes={textColor} />
+                <Message italic={smallText} normal={largeText} classes={darkSide === 'left' ? 'has-text-light' : ''} />
               </Hero>
             </Column>
-            <Column classes="is-paddingless">
+            <Column classes={`is-paddingless ${darkSide === 'right' ? 'dark-background' : ''}`}>
               <Hero classes="is-fullheight">
                 <div className="hero-body">
                   <Card
@@ -29,6 +29,7 @@ class ComposeImageRow extends Component {
                     href={href}
                     src={src}
                     classes={classes}
+                    darkSide={darkSide}
                   >
                     {children}
                   </Card>
@@ -42,21 +43,19 @@ class ComposeImageRow extends Component {
   }
 }
 
-ComposeImageRow.defaultProps = {
-  theme: '',
-  textColor: ''
+ComposeCardRow.defaultProps = {
+  darkSide: '',
 };
 
-ComposeImageRow.propTypes = {
+ComposeCardRow.propTypes = {
   smallText: PropTypes.string.isRequired,
   largeText: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   href: PropTypes.string.isRequired,
   src: PropTypes.string.isRequired,
-  theme: PropTypes.string,
-  textColor: PropTypes.string,
+  darkSide: PropTypes.string,
   classes: PropTypes.string.isRequired,
-  children: PropTypes.string.isRequired
+  children: PropTypes.node.isRequired
 };
 
-export default ComposeImageRow;
+export default ComposeCardRow;
