@@ -7,11 +7,10 @@ import ComposeCardRow from './components/ComposeCardRow';
 import ApacheText from './components/ApacheText';
 import CollatzText from './components/CollatzText';
 import Bio from './components/Bio';
-import SeventhRow from './layout/SeventhRow';
+import EducationText from './components/EducationText';
 
 // TODOS: 
 
-// incorporate rest of content: linkedin certifications, etc
 // make favicon
 // remove unused components and refactor style attributes
 // try subtle bio animation
@@ -87,7 +86,18 @@ class App extends Component {
         </ComposeCardRow>
  
         <Waypoint onEnter={({ previousPosition }) => this.scrollToRow(previousPosition, this.sixthRow, this.seventhRow)} />
-        <SeventhRow ref={row => this.seventhRow = row} />
+        <ComposeCardRow
+          smallText="someone who is"
+          largeText="always learning"
+          title="Education is important."
+          href="https://www.linkedin.com/in/yuval-allweil/"
+          src="linkedin.png"
+          darkSide="left"
+          classes="education"
+          ref={row => this.seventhRow = row}
+        >
+          <EducationText />
+        </ComposeCardRow>
 
         <Waypoint onEnter={({ previousPosition }) => this.scrollToRow(previousPosition, this.seventhRow, this.eighthRow)} />
         <ComposeCardRow 

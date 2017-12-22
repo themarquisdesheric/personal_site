@@ -3,8 +3,10 @@
 @import "../node_modules/bulma/sass/utilities/derived-variables.sass";
 @import "../node_modules/bulma/bulma";
 
-.bio {
-  &::before {
+.bio,
+.education {
+  &::before,
+  &::after {
     // this fixes a scrolling bug by rendering as a newline
     white-space: pre-wrap;
     content: "\A";
@@ -22,10 +24,16 @@
       }
 
       &.collatz,
-      &.contact {
+      &.contact,
+      &.education {
         width: 75%;
         border: 1px solid lighten(black, 18%);
         border-radius: 1%;
+      }
+      
+      &.education {
+        padding: 1em;
+        border: 1px solid $grey-lighter;
       }
   }
 
