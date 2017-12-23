@@ -84,3 +84,24 @@
   font-family: 'Playfair Display', serif;
   font-weight: 900;
 }
+
+.icons {
+  i {
+    display: block;
+    font-size: 5em;
+    color: $dark;
+    margin-top: .3em;
+    
+    &:hover {
+      color: $blue;
+    }
+  }
+  
+  .linkedin {
+    color: $blue;
+    
+    &:hover {
+      color: $dark;
+    }
+  }
+}
