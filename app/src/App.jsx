@@ -8,11 +8,14 @@ import ApacheText from './components/ApacheText';
 import CollatzText from './components/CollatzText';
 import Bio from './components/Bio';
 import EducationText from './components/EducationText';
+import ContactText from './components/ContactText';
 
 // TODOS: 
 
+// use content.json file to map content
+
 // make favicon
-// remove unused components and refactor style attributes
+// refactor style attributes
 // try subtle bio animation
 
 class App extends Component {
@@ -30,7 +33,7 @@ class App extends Component {
         <ComposeImageRow 
           smallText="meet"
           largeText="yuval"
-          src="yuval-leaves"
+          src="yuval-leaves.jpg"
           theme="dark-background"
           textColor="has-text-light"
           ref={row => this.firstRow = row} 
@@ -40,7 +43,7 @@ class App extends Component {
         <ComposeImageRow
           smallText="a web developer who has"
           largeText="worn many hats"
-          src="yuval-orange-hat"
+          src="yuval-orange-hat.jpg"
           ref={row => this.secondRow = row} 
         />
         
@@ -48,7 +51,7 @@ class App extends Component {
         <ComposeImageRow 
           smallText="you could say he"
           largeText="has vision"
-          src="yuval-fake-fur"
+          src="yuval-fake-fur.jpg"
           theme="dark-background"
           textColor="has-text-light"
           ref={row => this.thirdRow = row} 
@@ -100,21 +103,13 @@ class App extends Component {
         </ComposeCardRow>
 
         <Waypoint onEnter={({ previousPosition }) => this.scrollToRow(previousPosition, this.seventhRow, this.eighthRow)} />
-        <ComposeCardRow 
-          smallText="contact"
-          largeText="yuval"
-          title="themarquisdesheric@gmail.com"
-          href="mailto:themarquisdesheric@gmail.com"
+        <ComposeImageRow 
           src="portland.png"
-          darkSide="right"
           classes="contact"
           ref={row => this.eighthRow = row} 
         >
-          <div>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo impedit excepturi quaerat voluptates provident, sequi praesentium illum facere, laborum mollitia necessitatibus! Accusantium reiciendis, aliquid similique doloribus dicta explicabo! Natus, ipsam.
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias sit, hic quam accusantium harum, vero nihil 
-          </div>
-        </ComposeCardRow>
+          <ContactText />
+        </ComposeImageRow>
       </div>
     );
   }

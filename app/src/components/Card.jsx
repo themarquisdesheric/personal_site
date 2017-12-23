@@ -5,7 +5,7 @@ const Card = ({ title, href, src, classes, darkSide, children }) => (
   <div className={darkSide === 'right' ? 'card dark-background' : 'card'}>
     <div className="card-image">
       <figure className={`image ${classes}`}>
-        <a 
+        <a
           href={href}
           target="_blank"
           rel="noopener noreferrer"

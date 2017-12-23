@@ -10,7 +10,7 @@ import Image from '../components/Image';
 class ComposeImageRow extends Component {
   render() {
     
-    const { smallText, largeText, src, theme, textColor } = this.props;
+    const { smallText, largeText, src, theme, textColor, children } = this.props;
 
     return (
       <div ref={node => this.div = node}>
@@ -18,12 +18,14 @@ class ComposeImageRow extends Component {
           <Columns>
             <Column classes={theme}>
               <Hero classes="is-fullheight">
-                <Message italic={smallText} normal={largeText} classes={textColor} />
+                {children ||
+                  <Message italic={smallText} normal={largeText} classes={textColor} />
+                }
               </Hero>
             </Column>
             <Column classes="is-paddingless">
               <Image>
-                <img src={`${src}.jpg`} alt={src} />
+                <img src={`${src}`} alt={src.slice(0, -4)} />
               </Image>
             </Column>
           </Columns>
@@ -34,16 +36,20 @@ class ComposeImageRow extends Component {
 }
 
 ComposeImageRow.defaultProps = {
+  smallText: '',
+  largeText: '',
   theme: '',
-  textColor: ''
+  textColor: '',
+  children: null
 };
 
 ComposeImageRow.propTypes = {
-  smallText: PropTypes.string.isRequired,
-  largeText: PropTypes.string.isRequired,
+  smallText: PropTypes.string,
+  largeText: PropTypes.string,
   src: PropTypes.string.isRequired,
   theme: PropTypes.string,
-  textColor: PropTypes.string
+  textColor: PropTypes.string,
+  children: PropTypes.node
 };
 
 export default ComposeImageRow;
