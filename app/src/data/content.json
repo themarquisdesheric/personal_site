@@ -1,0 +1,56 @@
+{
+  "images": [
+    {
+      "smallText": "meet",
+      "largeText": "yuval",
+      "src": "yuval-leaves.jpg",
+      "darkSide": "left",
+      "id": 0
+    },
+    {
+      "smallText": "a web developer who has",
+      "largeText": "worn many hats",
+      "src": "yuval-orange-hat.jpg",
+      "id": 1
+    },
+    {
+      "smallText": "you could say he",
+      "largeText": "has vision",
+      "src": "yuval-fake-fur.jpg",
+      "darkSide": "left",
+      "id": 2
+    }
+  ],
+  "info": [
+    {
+      "smallText": "he has contributed to",
+      "largeText": "open source",
+      "title": "Apache DataFu",
+      "href": "https://datafu.incubator.apache.org/",
+      "src": "apache-feather.png",
+      "darkSide": "left",
+      "classes": "apache",
+      "id": 4
+    },
+    {
+      "smallText": "and turned the collatz conjecture into a",
+      "largeText": "melody machine",
+      "title": "Collatz Music",
+      "href": "https://themarquisdesheric.github.io/collatz-conjecture-music/",
+      "src": "collatz.gif",
+      "darkSide": "right",
+      "classes": "collatz",
+      "id": 5
+    },
+    {
+      "smallText": "someone who is",
+      "largeText": "always learning",
+      "title": "Education is important.",
+      "href": "https://www.linkedin.com/in/yuval-allweil/",
+      "src": "linkedin.png",
+      "darkSide": "left",
+      "classes": "education",
+      "id": 6
+    }
+  ]
+}

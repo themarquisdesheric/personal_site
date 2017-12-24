@@ -10,20 +10,22 @@ import Image from '../components/Image';
 class ComposeImageRow extends Component {
   render() {
     
-    const { smallText, largeText, src, alt, theme, textColor } = this.props;
+    const { smallText, largeText, src, darkSide, children } = this.props;
 
     return (
       <div ref={node => this.div = node}>
         <Block>
           <Columns>
-            <Column classes={theme}>
+            <Column classes={darkSide === 'left' ? 'dark-background' : ''}>
               <Hero classes="is-fullheight">
-                <Message italic={smallText} normal={largeText} classes={textColor} />
+                {children ||
+                  <Message italic={smallText} normal={largeText} classes={darkSide === 'left' ? 'has-text-light' : ''} />
+                }
               </Hero>
             </Column>
             <Column classes="is-paddingless">
               <Image>
-                <img src={src} alt={alt} />
+                <img src={`${src}`} alt={src.slice(0, -4)} />
               </Image>
             </Column>
           </Columns>
@@ -34,17 +36,18 @@ class ComposeImageRow extends Component {
 }
 
 ComposeImageRow.defaultProps = {
-  theme: '',
-  textColor: ''
+  smallText: '',
+  largeText: '',
+  darkSide: '',
+  children: null
 };
 
 ComposeImageRow.propTypes = {
-  smallText: PropTypes.string.isRequired,
-  largeText: PropTypes.string.isRequired,
+  smallText: PropTypes.string,
+  largeText: PropTypes.string,
   src: PropTypes.string.isRequired,
-  alt: PropTypes.string.isRequired,
-  theme: PropTypes.string,
-  textColor: PropTypes.string
+  darkSide: PropTypes.string,
+  children: PropTypes.node
 };
 
 export default ComposeImageRow;

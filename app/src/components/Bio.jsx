@@ -15,7 +15,7 @@ class Bio extends Component {
                 <div className="hero-body">
                   <section className="section">
                     <div className="content has-text-centered">
-                      <p className="has-text-centered">
+                      <p className="has-text-centered is-marginless">
                         <span style={{ fontSize: '1.6em', fontWeight: 'bold', fontFamily: 'Playfair Display' }}>
                           yes,
                         </span> that was a joke. <br />
@@ -28,6 +28,7 @@ class Bio extends Component {
                         who is yuval?
                       </h1>
                       <p className="has-text-justified">
+                        Yuval is a <span style={{textDecoration: 'line-through'}}>terrible</span> charming young man.
                         Lorem idivsum dolor sit amet consectetur adipisicing elit. Eos, non?<br />
 
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, cupiditate amet debitis<br /> 
