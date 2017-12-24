@@ -10,16 +10,16 @@ import Image from '../components/Image';
 class ComposeImageRow extends Component {
   render() {
     
-    const { smallText, largeText, src, theme, textColor, children } = this.props;
+    const { smallText, largeText, src, darkSide, children } = this.props;
 
     return (
       <div ref={node => this.div = node}>
         <Block>
           <Columns>
-            <Column classes={theme}>
+            <Column classes={darkSide === 'left' ? 'dark-background' : ''}>
               <Hero classes="is-fullheight">
                 {children ||
-                  <Message italic={smallText} normal={largeText} classes={textColor} />
+                  <Message italic={smallText} normal={largeText} classes={darkSide === 'left' ? 'has-text-light' : ''} />
                 }
               </Hero>
             </Column>
@@ -38,8 +38,7 @@ class ComposeImageRow extends Component {
 ComposeImageRow.defaultProps = {
   smallText: '',
   largeText: '',
-  theme: '',
-  textColor: '',
+  darkSide: '',
   children: null
 };
 
@@ -47,8 +46,7 @@ ComposeImageRow.propTypes = {
   smallText: PropTypes.string,
   largeText: PropTypes.string,
   src: PropTypes.string.isRequired,
-  theme: PropTypes.string,
-  textColor: PropTypes.string,
+  darkSide: PropTypes.string,
   children: PropTypes.node
 };
 

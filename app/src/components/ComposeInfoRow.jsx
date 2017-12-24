@@ -7,7 +7,7 @@ import Hero from '../components/Hero';
 import Message from '../components/Message';
 import Card from '../components/Card';
 
-class ComposeCardRow extends Component {
+class ComposeInfoRow extends Component {
   render() {
     
     const { smallText, largeText, title, href, src, darkSide, classes, children } = this.props;
@@ -43,11 +43,11 @@ class ComposeCardRow extends Component {
   }
 }
 
-ComposeCardRow.defaultProps = {
+ComposeInfoRow.defaultProps = {
   darkSide: '',
 };
 
-ComposeCardRow.propTypes = {
+ComposeInfoRow.propTypes = {
   smallText: PropTypes.string.isRequired,
   largeText: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
@@ -58,4 +58,4 @@ ComposeCardRow.propTypes = {
   children: PropTypes.node.isRequired
 };
 
-export default ComposeCardRow;
+export default ComposeInfoRow;

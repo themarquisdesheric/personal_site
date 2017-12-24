@@ -1,6 +1,6 @@
 import React from 'react';
 import 'font-awesome/css/font-awesome.css';
-import Icon from './Icon';
+import Icon from '../Icon';
 
 const ContactText = () => {
   const icons = [
@@ -28,13 +28,9 @@ const ContactText = () => {
         </a>
 
         <div className="icons">
-          {icons.map(icon => (
-            <Icon 
-              href={icon.href} 
-              classes={icon.classes} 
-              key={icon.href}
-            />
-          ))}
+          {icons.map(icon => 
+            <Icon {...icon} key={icon.href} />
+          )}
         </div>
       </div>
     </div>
