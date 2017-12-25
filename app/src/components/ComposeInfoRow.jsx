@@ -16,8 +16,8 @@ class ComposeInfoRow extends Component {
       <div ref={node => this.div = node}>
         <Block>
           <Columns>
-            <Column classes={darkSide === 'left' ? 'dark-background' : ''}>
-              <Hero classes="hero-text">
+            <Column classes={darkSide === 'left' ? 'dark-background' : 'border'}>
+              <Hero classes={title === 'Education is important.' ? 'border-light hero-text' : 'hero-text'}>
                 <Message italic={smallText} normal={largeText} classes={darkSide === 'left' ? 'has-text-light' : ''} />
               </Hero>
             </Column>

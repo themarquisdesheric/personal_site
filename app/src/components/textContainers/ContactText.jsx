@@ -22,7 +22,7 @@ const ContactText = () => {
     <div className="hero-body">
       <div className="content has-text-centered">
         <a href="mailto:themarquisdesheric@gmail.com">
-          <h1 className="normal-text is-size-5-mobile is-size-1 is-marginless">
+          <h1 className="normal-text is-size-1 is-marginless">
             contact
           </h1>
         </a>

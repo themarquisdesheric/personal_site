@@ -2,6 +2,10 @@
 @import "../node_modules/bulma/sass/utilities/functions";
 @import "../node_modules/bulma/sass/utilities/derived-variables.sass";
 @import "../node_modules/bulma/bulma";
+  
+.hero-text {
+    padding: 33% 0;
+  }
 
 .bio,
 .education {
@@ -106,17 +110,11 @@
   }
 }
 
-// need white border as well as black for certain sections
-// .is-hidden-tablet {
-//   border-top: 2px solid $dark;
-// }
-
-// .bio {
-//   .is-hidden-tablet {
-//     border-top: none;
-//   }
-// }
-
-.hero-text {
-  padding: 35% 0;
+.border {
+  border-top: 2px solid $dark;
 }
+
+.border-light {
+  border-top: 2px solid $light;
+}
+
