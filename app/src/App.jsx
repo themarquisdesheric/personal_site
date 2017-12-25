@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import MediaQuery from 'react-responsive';
 import Waypoint from 'react-waypoint';
-
 import data from './data/content.json';
+import DesktopScrolling from './components/DesktopScrolling';
 import ComposeImageRow from './components/ComposeImageRow';
 import ComposeInfoRow from './components/ComposeInfoRow';
 import Bio from './components/Bio';
@@ -14,12 +12,9 @@ import ContactText from './components/textContainers/ContactText';
 import Footer from './components/Footer';
 import './App.css'; 
 
-
 // TODOS: 
 
 // deploy as gh user pages?
-// refactor/remove MediaQuery components 
-
 // make favicon
 // try subtle bio animation
 
@@ -28,9 +23,9 @@ class App extends Component {
 
   scrollToRow = (previousPosition, nodeAbove, nodeBelow) => {
     if (previousPosition === Waypoint.above) {
-      nodeAbove.div.scrollIntoView({ behavior: 'smooth' });
+      this.rows[nodeAbove].div.scrollIntoView({ behavior: 'smooth' });
     } else if (previousPosition === Waypoint.below) {
-      nodeBelow.div.scrollIntoView({ behavior: 'smooth' });
+      this.rows[nodeBelow].div.scrollIntoView({ behavior: 'smooth' });
     }
   }
 
@@ -43,19 +38,12 @@ class App extends Component {
         {data.images.map(row => (
           <React.Fragment key={row.id}>
             <ComposeImageRow {...row} ref={node => this.rows[row.id] = node} />
-
-            <MediaQuery minDeviceWidth={1065}>
-              <Waypoint onEnter={({ previousPosition }) => 
-                this.scrollToRow(previousPosition, this.rows[row.id], this.rows[row.id + 1])}
-              />
-            </MediaQuery>
+            <DesktopScrolling scrollTo={this.scrollToRow} prevNode={row.id} nextNode={row.id + 1} />
           </React.Fragment>
         ))}
         
         <Bio ref={row => this.rows[3] = row} />
-        <MediaQuery minDeviceWidth={1065}>
-          <Waypoint onEnter={({ previousPosition }) => this.scrollToRow(previousPosition, this.rows[3], this.rows[4])} />
-        </MediaQuery>
+        <DesktopScrolling scrollTo={this.scrollToRow} prevNode={3} nextNode={4} />
         
         {data.info.map( (row, i) => {
           let Info = textContainers[i];
@@ -68,13 +56,10 @@ class App extends Component {
               >
                 <Info />
               </ComposeInfoRow>
-              <MediaQuery minDeviceWidth={1065}>
-                <Waypoint onEnter={({ previousPosition }) => 
-                  this.scrollToRow(previousPosition, this.rows[row.id], this.rows[row.id + 1])}
-                />
-              </MediaQuery>
+              <DesktopScrolling scrollTo={this.scrollToRow} prevNode={row.id} nextNode={row.id + 1} />
             </React.Fragment>
-          );})}
+          );
+        })}
 
         <ComposeImageRow 
           src="portland.png"
@@ -88,9 +73,5 @@ class App extends Component {
     );
   }
 }
-
-Waypoint.propTypes = {
-  onEnter: PropTypes.func.isRequired
-};
 
 export default App;
