@@ -72,9 +72,18 @@
   h1 {
     font-size: 4em;
   }
-
+  
   h2 {
     font-size: 1.5em;
+  }
+  
+  .dropcap {
+    font: bold 1.6em 'Playfair Display';
+  }
+
+  h1.bio-title {
+    margin: 50px;
+    font-size: 100px;
   }
 }
 
@@ -118,3 +127,6 @@
   border-top: 2px solid $light;
 }
 
+.is-strikethrough {
+  text-decoration: line-through;
+}

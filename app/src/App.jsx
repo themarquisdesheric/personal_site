@@ -15,12 +15,10 @@ import './App.css';
 
 // TODOS: 
 
-// add border to top of white infoCard sections for mobile
-
 // deploy as gh user pages?
+// refactor/remove MediaQuery components 
 
 // make favicon
-// refactor style attributes
 // try subtle bio animation
 
 class App extends Component {
@@ -35,6 +33,7 @@ class App extends Component {
   }
 
   render() {
+
     const textContainers = [ApacheText, CollatzText, EducationText];
 
     return (

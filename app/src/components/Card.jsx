@@ -24,8 +24,7 @@ const Card = ({ title, href, src, classes, darkSide, children }) => (
         >
           {title}
         </a>
-      </p>
-      
+      </p>  
       {children}
     </div>
   </div>
