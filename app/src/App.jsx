@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import MediaQuery from 'react-responsive';
 import Waypoint from 'react-waypoint';
+
 import data from './data/content.json';
 import ComposeImageRow from './components/ComposeImageRow';
 import ComposeInfoRow from './components/ComposeInfoRow';
@@ -10,6 +11,7 @@ import ApacheText from './components/textContainers/ApacheText';
 import CollatzText from './components/textContainers/CollatzText';
 import EducationText from './components/textContainers/EducationText';
 import ContactText from './components/textContainers/ContactText';
+import Footer from './components/Footer';
 import './App.css'; 
 
 
@@ -81,6 +83,7 @@ class App extends Component {
         >
           <ContactText />
         </ComposeImageRow>
+        <Footer />
       </div>
     );
   }
