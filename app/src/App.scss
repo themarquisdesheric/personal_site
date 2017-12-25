@@ -106,14 +106,17 @@
   }
 }
 
-// host site to see if fullscreen actually holds up on mobile. this could be a chrome issue
-// if it's not chrome issue, need white border as well as black for certain sections
-.is-hidden-tablet {
-  border-top: 2px solid $dark;
-}
+// need white border as well as black for certain sections
+// .is-hidden-tablet {
+//   border-top: 2px solid $dark;
+// }
 
-.bio {
-  .is-hidden-tablet {
-    border-top: none;
-  }
+// .bio {
+//   .is-hidden-tablet {
+//     border-top: none;
+//   }
+// }
+
+.hero-text {
+  padding: 35% 0;
 }

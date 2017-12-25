@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import Waypoint from 'react-waypoint';
 import PropTypes from 'prop-types';
+import MediaQuery from 'react-responsive';
+import Waypoint from 'react-waypoint';
 import data from './data/content.json';
 import ComposeImageRow from './components/ComposeImageRow';
 import ComposeInfoRow from './components/ComposeInfoRow';
@@ -11,11 +12,10 @@ import EducationText from './components/textContainers/EducationText';
 import ContactText from './components/textContainers/ContactText';
 import './App.css'; 
 
+
 // TODOS: 
 
-// disable waypoints on mobile/tune them in better
 // add border to top of white infoCard sections for mobile
-// reduce column height for mobile... maybe that will help with the above
 
 // deploy as gh user pages?
 
@@ -43,14 +43,18 @@ class App extends Component {
           <React.Fragment key={row.id}>
             <ComposeImageRow {...row} ref={node => this.rows[row.id] = node} />
 
-            <Waypoint onEnter={({ previousPosition }) => 
-              this.scrollToRow(previousPosition, this.rows[row.id], this.rows[row.id + 1])}
-            />
+            <MediaQuery minDeviceWidth={1065}>
+              <Waypoint onEnter={({ previousPosition }) => 
+                this.scrollToRow(previousPosition, this.rows[row.id], this.rows[row.id + 1])}
+              />
+            </MediaQuery>
           </React.Fragment>
         ))}
         
         <Bio ref={row => this.rows[3] = row} />
-        <Waypoint onEnter={({ previousPosition }) => this.scrollToRow(previousPosition, this.rows[3], this.rows[4])} />
+        <MediaQuery minDeviceWidth={1065}>
+          <Waypoint onEnter={({ previousPosition }) => this.scrollToRow(previousPosition, this.rows[3], this.rows[4])} />
+        </MediaQuery>
         
         {data.info.map( (row, i) => {
           let Info = textContainers[i];
@@ -63,9 +67,11 @@ class App extends Component {
               >
                 <Info />
               </ComposeInfoRow>
-              <Waypoint onEnter={({ previousPosition }) => 
-                this.scrollToRow(previousPosition, this.rows[row.id], this.rows[row.id + 1])}
-              />
+              <MediaQuery minDeviceWidth={1065}>
+                <Waypoint onEnter={({ previousPosition }) => 
+                  this.scrollToRow(previousPosition, this.rows[row.id], this.rows[row.id + 1])}
+                />
+              </MediaQuery>
             </React.Fragment>
           );})}
 

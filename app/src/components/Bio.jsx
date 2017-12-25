@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Block from '../components/Block';
 import Columns from '../components/Columns';
 import Column from '../components/Column';
-import Hero from '../components/Hero';
 
 class Bio extends Component {
   render() {
@@ -11,7 +10,7 @@ class Bio extends Component {
         <Block>
           <Columns>
             <Column>
-              <Hero classes="is-fullheight">
+              <section className="hero is-fullheight">
                 <div className="hero-body">
                   <section className="section">
                     <div className="content has-text-centered">
@@ -41,7 +40,7 @@ class Bio extends Component {
                     </div>
                   </section>
                 </div>
-              </Hero>
+              </section>
             </Column>
           </Columns>
         </Block>
