@@ -13,6 +13,12 @@ import './App.css';
 
 // TODOS: 
 
+// disable waypoints on mobile/tune them in better
+// add border to top of white infoCard sections for mobile
+// reduce column height for mobile... maybe that will help with the above
+
+// deploy as gh user pages?
+
 // make favicon
 // refactor style attributes
 // try subtle bio animation
