@@ -15,7 +15,6 @@ import './App.css';
 // TODOS: 
 
 // deploy as gh user pages?
-// make favicon
 // try subtle bio animation
 
 class App extends Component {
