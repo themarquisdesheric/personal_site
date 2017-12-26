@@ -2,6 +2,10 @@
 @import "../node_modules/bulma/sass/utilities/functions";
 @import "../node_modules/bulma/sass/utilities/derived-variables.sass";
 @import "../node_modules/bulma/bulma";
+  
+.hero-text {
+    padding: 33% 0;
+  }
 
 .bio,
 .education {
@@ -68,9 +72,18 @@
   h1 {
     font-size: 4em;
   }
-
+  
   h2 {
     font-size: 1.5em;
+  }
+  
+  .dropcap {
+    font: bold 1.6em 'Playfair Display';
+  }
+
+  h1.bio-title {
+    margin: 50px;
+    font-size: 100px;
   }
 }
 
@@ -88,7 +101,7 @@
 .icons {
   i {
     display: block;
-    font-size: 5em;
+    font-size: 4em;
     color: $dark;
     margin-top: .3em;
     
@@ -104,4 +117,20 @@
       color: $dark;
     }
   }
+}
+
+.border {
+  border-top: 2px solid $dark;
+}
+
+.border-light {
+  border-top: 2px solid $light;
+}
+
+.is-strikethrough {
+  text-decoration: line-through;
+}
+
+footer {
+  padding: 2em;
 }

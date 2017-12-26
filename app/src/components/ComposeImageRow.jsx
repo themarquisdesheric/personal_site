@@ -16,8 +16,8 @@ class ComposeImageRow extends Component {
       <div ref={node => this.div = node}>
         <Block>
           <Columns>
-            <Column classes={darkSide === 'left' ? 'dark-background' : ''}>
-              <Hero classes="is-fullheight">
+            <Column classes={darkSide === 'left' ? 'dark-background' : 'border'}>
+              <Hero classes="hero-text">
                 {children ||
                   <Message italic={smallText} normal={largeText} classes={darkSide === 'left' ? 'has-text-light' : ''} />
                 }
