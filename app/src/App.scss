@@ -4,8 +4,8 @@
 @import "../node_modules/bulma/bulma";
   
 .hero-text {
-    padding: 33% 0;
-  }
+  padding: 33% 0;
+}
 
 .bio,
 .education {
@@ -76,7 +76,9 @@
   h2 {
     font-size: 1.5em;
   }
-  
+}
+
+.bio {
   .dropcap {
     font: bold 1.6em 'Playfair Display';
   }
@@ -84,6 +86,12 @@
   h1.bio-title {
     margin: 50px;
     font-size: 100px;
+  }
+
+  p {
+    max-width: 950px;
+    margin: auto;
+    text-align: justify;
   }
 }
 
@@ -125,10 +133,6 @@
 
 .border-light {
   border-top: 2px solid $light;
-}
-
-.is-strikethrough {
-  text-decoration: line-through;
 }
 
 footer {

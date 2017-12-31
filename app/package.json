@@ -10,8 +10,7 @@
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-responsive": "^4.0.3",
-    "react-waypoint": "^7.3.2",
-    "vanilla-tilt": "^1.4.1"
+    "react-waypoint": "^7.3.2"
   },
   "devDependencies": {
     "eslint": "^4.13.1",
