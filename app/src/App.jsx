@@ -12,11 +12,6 @@ import ContactText from './components/textContainers/ContactText';
 import Footer from './components/Footer';
 import './App.css'; 
 
-// TODOS: 
-
-// deploy as gh user pages?
-// try subtle bio animation
-
 class App extends Component {
   rows = [];
 
@@ -61,7 +56,7 @@ class App extends Component {
         })}
 
         <ComposeImageRow 
-          src="portland.png"
+          src="portland.jpg"
           classes="contact"
           ref={row => this.rows[7] = row} 
         >

@@ -10,14 +10,14 @@ import Image from '../components/Image';
 class ComposeImageRow extends Component {
   render() {
     
-    const { smallText, largeText, src, darkSide, children } = this.props;
+    const { smallText, largeText, src, darkSide, classes, children } = this.props;
 
     return (
       <div ref={node => this.div = node}>
         <Block>
           <Columns>
             <Column classes={darkSide === 'left' ? 'dark-background' : 'border'}>
-              <Hero classes="hero-text">
+              <Hero classes={`hero-text ${classes}`}>
                 {children ||
                   <Message italic={smallText} normal={largeText} classes={darkSide === 'left' ? 'has-text-light' : ''} />
                 }
@@ -39,6 +39,7 @@ ComposeImageRow.defaultProps = {
   smallText: '',
   largeText: '',
   darkSide: '',
+  classes: '',
   children: null
 };
 
@@ -47,6 +48,7 @@ ComposeImageRow.propTypes = {
   largeText: PropTypes.string,
   src: PropTypes.string.isRequired,
   darkSide: PropTypes.string,
+  classes: PropTypes.string,
   children: PropTypes.node
 };
 
