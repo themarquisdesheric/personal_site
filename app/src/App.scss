@@ -5,6 +5,11 @@
   
 .hero-text {
   padding: 33% 0;
+
+  &.contact {
+    padding-top: 25%;
+    padding-bottom: 20%;
+  }
 }
 
 .bio,
@@ -28,13 +33,12 @@
       }
 
       &.collatz,
-      &.contact,
       &.education {
         width: 75%;
         border: 1px solid lighten(black, 18%);
         border-radius: 1%;
       }
-      
+
       &.education {
         padding: 1em;
         border: 1px solid $grey-lighter;

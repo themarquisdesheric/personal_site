@@ -56,7 +56,7 @@ class App extends Component {
         })}
 
         <ComposeImageRow 
-          src="portland.png"
+          src="portland.jpg"
           classes="contact"
           ref={row => this.rows[7] = row} 
         >
