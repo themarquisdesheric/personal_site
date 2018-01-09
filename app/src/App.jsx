@@ -8,9 +8,9 @@ import Bio from './components/Bio';
 import ApacheText from './components/textContainers/ApacheText';
 import CollatzText from './components/textContainers/CollatzText';
 import EducationText from './components/textContainers/EducationText';
-import ContactText from './components/textContainers/ContactText';
 import Footer from './components/Footer';
 import './App.css'; 
+import Contact from './components/Contact';
 
 class App extends Component {
   rows = [];
@@ -55,13 +55,7 @@ class App extends Component {
           );
         })}
 
-        <ComposeImageRow 
-          src="portland.jpg"
-          classes="contact"
-          ref={row => this.rows[7] = row} 
-        >
-          <ContactText />
-        </ComposeImageRow>
+        <Contact ref={row => this.rows[7] = row} />
         <Footer />
       </div>
     );
