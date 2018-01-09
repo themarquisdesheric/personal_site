@@ -6466,6 +6466,14 @@ label.panel-block {
   background-color: whitesmoke;
   padding: 3rem 1.5rem 6rem; }
 
+.has-vertical-center {
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+.hero-text {
+  padding: 20% 0; }
+
 .bio::before, .bio::after,
 .education::before,
 .education::after {
@@ -6478,7 +6486,7 @@ label.panel-block {
     margin: 0 auto 1em; }
     .card figure.apache {
       width: 45%; }
-    .card figure.collatz, .card figure.contact, .card figure.education {
+    .card figure.collatz, .card figure.education {
       width: 75%;
       border: 1px solid #2e2e2e;
       border-radius: 1%; }
@@ -6508,6 +6516,18 @@ label.panel-block {
 .content h2 {
   font-size: 1.5em; }
 
+.bio .dropcap {
+  font: bold 1.6em 'Playfair Display'; }
+
+.bio h1.bio-title {
+  margin: 50px;
+  font-size: 100px; }
+
+.bio p {
+  max-width: 950px;
+  margin: auto;
+  text-align: justify; }
+
 .italic-text {
   font-family: 'Playfair Display', serif;
   font-style: italic;
@@ -6516,3 +6536,24 @@ label.panel-block {
 .normal-text {
   font-family: 'Playfair Display', serif;
   font-weight: 900; }
+
+.icons i {
+  display: block;
+  font-size: 4.5em;
+  color: #363636;
+  margin: .3em 0; }
+
+.icons .fa-envelope-o {
+  color: #ffce0a; }
+
+.icons .fa-linkedin-square {
+  color: #3273dc; }
+
+.border {
+  border-top: 2px solid #363636; }
+
+.border-light {
+  border-top: 2px solid whitesmoke; }
+
+footer {
+  padding: 2em; }

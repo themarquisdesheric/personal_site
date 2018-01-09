@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Block from '../components/Block';
 import Columns from '../components/Columns';
-import Column from '../components/Column';
+import TextColumn from '../components/TextColumn';
+import ImageColumn from '../components/ImageColumn';
 import Hero from '../components/Hero';
 import Message from '../components/Message';
 import Card from '../components/Card';
@@ -14,14 +15,14 @@ class ComposeInfoRow extends Component {
 
     return (
       <div ref={node => this.div = node}>
-        <Block>
+        <Block classes={title === 'Education is important.' && 'border-light'}>
           <Columns>
-            <Column classes={darkSide === 'left' ? 'dark-background' : 'border'}>
-              <Hero classes={title === 'Education is important.' ? 'border-light hero-text' : 'hero-text'}>
+            <TextColumn classes={darkSide === 'left' ? 'dark-background' : 'border'}>
+              <Hero classes="hero-text">
                 <Message italic={smallText} normal={largeText} classes={darkSide === 'left' ? 'has-text-light' : ''} />
               </Hero>
-            </Column>
-            <Column classes={`is-paddingless ${darkSide === 'right' ? 'dark-background' : ''}`}>
+            </TextColumn>
+            <ImageColumn classes={`is-paddingless ${darkSide === 'right' ? 'dark-background' : ''}`}>
               <Hero>
                 <div className="hero-body">
                   <Card
@@ -35,7 +36,7 @@ class ComposeInfoRow extends Component {
                   </Card>
                 </div>
               </Hero>
-            </Column>
+            </ImageColumn>
           </Columns>
         </Block>
       </div>

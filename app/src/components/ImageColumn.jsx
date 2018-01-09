@@ -1,19 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Column = ({ children, classes }) => (
+const ImageColumn = ({ children, classes }) => (
   <div className={`column ${classes}`}>
     {children}
   </div>
 );
 
-Column.defaultProps = {
+ImageColumn.defaultProps = {
   classes: ''
 };
 
-Column.propTypes = {
+ImageColumn.propTypes = {
   children: PropTypes.node.isRequired,
   classes: PropTypes.string
 };
 
-export default Column;
+export default ImageColumn;

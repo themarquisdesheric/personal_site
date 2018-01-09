@@ -9,6 +9,11 @@ const ContactText = () => {
       classes: 'fa fa-envelope-o'
     },
     {
+      href: '/yuvalallweilresume.pdf',
+      target: '_blank', 
+      classes: 'fa fa-file-text-o'
+    },
+    {
       href: 'https://www.linkedin.com/in/yuval-allweil/',
       classes: 'fa fa-linkedin-square linkedin'
     },
@@ -19,14 +24,8 @@ const ContactText = () => {
   ];
 
   return (
-    <div className="hero-body">
+    <div>
       <div className="content has-text-centered">
-        <a href="mailto:themarquisdesheric@gmail.com">
-          <h1 className="normal-text is-size-1 is-marginless">
-            contact
-          </h1>
-        </a>
-
         <div className="icons">
           {icons.map(icon => 
             <Icon {...icon} key={icon.href} />
