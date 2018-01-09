@@ -114,13 +114,17 @@
 .icons {
   i {
     display: block;
-    font-size: 4em;
+    font-size: 4.5em;
     color: $dark;
     margin: .3em 0;
-    
-    &:hover {
-      color: $blue;
-    }
+  }
+
+  .fa-envelope-o {
+    color: darken($yellow, 15%);
+  }
+
+  .fa-linkedin-square {
+    color: $blue;
   }
 }
 

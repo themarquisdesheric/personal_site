@@ -17,7 +17,7 @@ class Bio extends Component {
                       <p className="has-text-centered is-marginless">
                         <span className="dropcap">
                           ok,
-                        </span> so that was a bit over the top. <br />
+                        </span> that was a bit over the top. <br />
                         But it brings up a good point:
                       </p>
                       <h1 className="bio-title is-size-1-mobile normal-text">
