@@ -2,11 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Hero = ({ children, classes }) => (
-  <div className={`${classes}`}>
-    <section className="hero">
-      {children}
-    </section>
-  </div>
+  <section className={`${classes}`}>
+    {children}
+  </section>
 );
 
 Hero.defaultProps = {

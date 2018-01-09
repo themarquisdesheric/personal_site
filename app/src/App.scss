@@ -3,13 +3,14 @@
 @import "../node_modules/bulma/sass/utilities/derived-variables.sass";
 @import "../node_modules/bulma/bulma";
   
-.hero-text {
-  padding: 33% 0;
+.has-vertical-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-  &.contact {
-    padding-top: 25%;
-    padding-bottom: 20%;
-  }
+.hero-text {
+  padding: 20% 0;
 }
 
 .bio,
@@ -115,18 +116,10 @@
     display: block;
     font-size: 4em;
     color: $dark;
-    margin-top: .3em;
+    margin: .3em 0;
     
     &:hover {
       color: $blue;
-    }
-  }
-  
-  .linkedin {
-    color: $blue;
-    
-    &:hover {
-      color: $dark;
     }
   }
 }

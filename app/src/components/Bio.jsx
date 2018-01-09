@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Block from '../components/Block';
 import Columns from '../components/Columns';
-import Column from '../components/Column';
+import TextColumn from '../components/TextColumn';
 
 class Bio extends Component {
   render() {
@@ -9,7 +9,7 @@ class Bio extends Component {
       <div ref={node => this.div = node} className="bio" >
         <Block>
           <Columns>
-            <Column>
+            <TextColumn>
               <section className="hero is-fullheight">
                 <div className="hero-body">
                   <section className="section">
@@ -24,7 +24,7 @@ class Bio extends Component {
                         who is yuval?
                       </h1>
                       <p>
-                        {"Yuval is an autodidact whose curiosity knows no bounds. This curiosity has taken him to the other side of the world, and not just once or twice. It has inspired him to pore over the words of the dead in the hopes of unlocking the secrets of tomorrow, and to engage with the living for the same end. This unbridled passion has led him directly into the laboratories of some of today's most brilliant scientists, so their work could be distilled for a more popular audience."}
+                        {"Yuval Allweil is an autodidact whose curiosity knows no bounds. This curiosity has taken him to the other side of the world, and not just once or twice. It has inspired him to pore over the words of the dead in the hopes of unlocking the secrets of tomorrow, and to engage with the living for the same end. This unbridled passion has led him directly into the laboratories of some of today's most brilliant scientists, so their work could be distilled for a more popular audience."}
                       </p>
                       <p>
                         His interviews with visionary thinkers like Judea Pearl and Nir Eyal have headlined Specimen Magazine, and his short fiction has been published in several anthologies. 
@@ -40,7 +40,7 @@ class Bio extends Component {
                   </section>
                 </div>
               </section>
-            </Column>
+            </TextColumn>
           </Columns>
         </Block>
       </div>
