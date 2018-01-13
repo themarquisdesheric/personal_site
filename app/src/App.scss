@@ -2,6 +2,7 @@
 @import "../node_modules/bulma/sass/utilities/functions";
 @import "../node_modules/bulma/sass/utilities/derived-variables.sass";
 @import "../node_modules/bulma/bulma";
+@import "../node_modules/antd/dist/antd.css";
   
 .has-vertical-center {
   display: flex;
@@ -117,6 +118,10 @@
     font-size: 4.5em;
     color: $dark;
     margin: .3em 0;
+
+    &:hover {
+      opacity: 0.9;
+    }
   }
 
   .fa-envelope-o {

@@ -15,7 +15,7 @@ class ComposeInfoRow extends Component {
 
     return (
       <div ref={node => this.div = node}>
-        <Block classes={title === 'Education is important.' && 'border-light'}>
+        <Block classes={title === 'Education is important.' ? 'border-light' : ''}>
           <Columns>
             <TextColumn classes={darkSide === 'left' ? 'dark-background' : 'border'}>
               <Hero classes="hero-text">
