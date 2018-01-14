@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import  Tooltip  from 'antd/lib/tooltip';
+import Tooltip from 'antd/lib/tooltip';
 
 const Icon = ({ href, classes, text, i }) => (
   <Tooltip placement={i % 2 === 0 ? 'left' : 'right'} title={text}>

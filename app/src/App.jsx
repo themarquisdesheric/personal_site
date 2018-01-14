@@ -1,7 +1,5 @@
-import React, { Component } from 'react';
-import Waypoint from 'react-waypoint';
+import React from 'react';
 import data from './data/content.json';
-import DesktopScrolling from './components/DesktopScrolling';
 import ComposeImageRow from './components/ComposeImageRow';
 import ComposeInfoRow from './components/ComposeInfoRow';
 import Bio from './components/Bio';
@@ -12,54 +10,31 @@ import Footer from './components/Footer';
 import './App.css'; 
 import Contact from './components/Contact';
 
-class App extends Component {
-  rows = [];
+const App = () => {
+  const textContainers = [ApacheText, CollatzText, EducationText];
 
-  scrollToRow = (previousPosition, nodeAbove, nodeBelow) => {
-    if (previousPosition === Waypoint.above) {
-      this.rows[nodeAbove].div.scrollIntoView({ behavior: 'smooth' });
-    } else if (previousPosition === Waypoint.below) {
-      this.rows[nodeBelow].div.scrollIntoView({ behavior: 'smooth' });
-    }
-  }
+  return (
+    <div>
+      {data.images.map(row => (
+        <ComposeImageRow {...row} key={row.src} />
+      ))}
+      
+      <Bio />
+      
+      {data.info.map( (row, i) => {
+        let Info = textContainers[i];
 
-  render() {
+        return (
+          <ComposeInfoRow {...row} key={row.src}>
+            <Info />
+          </ComposeInfoRow>
+        );
+      })}
 
-    const textContainers = [ApacheText, CollatzText, EducationText];
-
-    return (
-      <div>
-        {data.images.map(row => (
-          <React.Fragment key={row.id}>
-            <ComposeImageRow {...row} ref={node => this.rows[row.id] = node} />
-            <DesktopScrolling scrollTo={this.scrollToRow} prevNode={row.id} nextNode={row.id + 1} />
-          </React.Fragment>
-        ))}
-        
-        <Bio ref={row => this.rows[3] = row} />
-        <DesktopScrolling scrollTo={this.scrollToRow} prevNode={3} nextNode={4} />
-        
-        {data.info.map( (row, i) => {
-          let Info = textContainers[i];
-
-          return (
-            <React.Fragment key={row.classes}>
-              <ComposeInfoRow
-                {...row}
-                ref={node => this.rows[row.id] = node}
-              >
-                <Info />
-              </ComposeInfoRow>
-              <DesktopScrolling scrollTo={this.scrollToRow} prevNode={row.id} nextNode={row.id + 1} />
-            </React.Fragment>
-          );
-        })}
-
-        <Contact ref={row => this.rows[7] = row} />
-        <Footer />
-      </div>
-    );
-  }
-}
+      <Contact />
+      <Footer />
+    </div>
+  );
+};
 
 export default App;

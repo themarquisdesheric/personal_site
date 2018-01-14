@@ -1,4 +1,5 @@
 /*! bulma.io v0.6.1 | MIT License | github.com/jgthms/bulma */
+@import url(../node_modules/antd/dist/antd.css);
 @keyframes spinAround {
   from {
     transform: rotate(0deg); }
@@ -6474,12 +6475,6 @@ label.panel-block {
 .hero-text {
   padding: 20% 0; }
 
-.bio::before, .bio::after,
-.education::before,
-.education::after {
-  white-space: pre-wrap;
-  content: "\A"; }
-
 .card {
   box-shadow: none; }
   .card figure {
@@ -6542,6 +6537,8 @@ label.panel-block {
   font-size: 4.5em;
   color: #363636;
   margin: .3em 0; }
+  .icons i:hover {
+    opacity: 0.85; }
 
 .icons .fa-envelope-o {
   color: #ffce0a; }
