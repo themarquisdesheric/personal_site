@@ -10,7 +10,7 @@ const ContactText = () => {
       text: 'themarquisdesheric@gmail.com'
     },
     {
-      href: '/yuvalallweilresume.pdf',
+      href: '/YuvalAllweilResume.pdf',
       target: '_blank', 
       classes: 'fa fa-file-text-o',
       text: 'Resume'
