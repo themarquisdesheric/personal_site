@@ -10,6 +10,8 @@ import Footer from './components/Footer';
 import './App.css'; 
 import Contact from './components/Contact';
 
+import Level from './components/Level';
+
 const App = () => {
   const textContainers = [ApacheText, CollatzText, EducationText];
 
@@ -20,10 +22,11 @@ const App = () => {
       ))}
       
       <Bio />
+      <Level />
       
       {data.info.map( (row, i) => {
         let Info = textContainers[i];
-
+        
         return (
           <ComposeInfoRow {...row} key={row.src}>
             <Info />
