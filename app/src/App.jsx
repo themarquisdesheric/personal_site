@@ -3,14 +3,13 @@ import data from './data/content.json';
 import ComposeImageRow from './components/ComposeImageRow';
 import ComposeInfoRow from './components/ComposeInfoRow';
 import Bio from './components/Bio';
+import Level from './components/Level';
 import ApacheText from './components/textContainers/ApacheText';
 import CollatzText from './components/textContainers/CollatzText';
 import EducationText from './components/textContainers/EducationText';
 import Footer from './components/Footer';
 import './App.css'; 
 import Contact from './components/Contact';
-
-import Level from './components/Level';
 
 const App = () => {
   const textContainers = [ApacheText, CollatzText, EducationText];
