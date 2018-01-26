@@ -91,6 +91,19 @@
   }
 }
 
+.level {
+  background-color: $light;
+  height: 100px;
+
+  img {
+    height: 35px;
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 0;
+  }
+}
+
 .italic-text {
   font-family: 'Playfair Display', serif;
   font-style: italic;

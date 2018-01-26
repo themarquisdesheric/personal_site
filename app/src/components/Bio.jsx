@@ -33,7 +33,15 @@ const Bio = () => {
                     </p>
                     <p>
                       {"Yuval loves helping others, and firmly believes that you won't get ahead without helping those around you. "}
-                      He is a dedicated teacher whose training programs and workshops have been professionally recognized at several past jobs, and has tutored over 15 students in web development.
+                      He is a dedicated teacher whose training programs and workshops have been professionally recognized, and is currently at&nbsp;
+                      <a 
+                        href="http://alchemycodelab.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Alchemy Code Lab
+                      </a>
+                      , where he is helping students learn web development using the following technologies:
                     </p>
                   </div>
                 </section>
