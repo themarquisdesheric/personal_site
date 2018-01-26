@@ -3,6 +3,7 @@ import data from './data/content.json';
 import ComposeImageRow from './components/ComposeImageRow';
 import ComposeInfoRow from './components/ComposeInfoRow';
 import Bio from './components/Bio';
+import Level from './components/Level';
 import ApacheText from './components/textContainers/ApacheText';
 import CollatzText from './components/textContainers/CollatzText';
 import EducationText from './components/textContainers/EducationText';
@@ -20,10 +21,11 @@ const App = () => {
       ))}
       
       <Bio />
+      <Level />
       
       {data.info.map( (row, i) => {
         let Info = textContainers[i];
-
+        
         return (
           <ComposeInfoRow {...row} key={row.src}>
             <Info />
