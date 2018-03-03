@@ -10,7 +10,7 @@ import Card from '../components/Card';
 
 const ComposeInfoRow = ({ smallText, largeText, title, href, src, darkSide, classes, children }) => (
   <div>
-    <Block classes={title === 'Education is important.' ? 'border-light' : ''}>
+    <Block classes={darkSide % 2 === 0 ? 'border-light' : ''}>
       <Columns>
         <TextColumn classes={darkSide % 2 === 0 ? 'dark-background' : 'border'}>
           <Hero classes="hero-text">
