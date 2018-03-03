@@ -3,8 +3,7 @@
     {
       "smallText": "meet",
       "largeText": "yuval",
-      "src": "yuval-leaves.jpg",
-      "darkSide": "left"
+      "src": "yuval-leaves.jpg"
     },
     {
       "smallText": "a web developer who has",
@@ -14,8 +13,7 @@
     {
       "smallText": "you could say he",
       "largeText": "has vision",
-      "src": "yuval-fake-fur.jpg",
-      "darkSide": "left"
+      "src": "yuval-fake-fur.jpg"
     }
   ],
   "info": [
@@ -25,7 +23,6 @@
       "title": "Apache DataFu",
       "href": "https://datafu.incubator.apache.org/",
       "src": "apache-feather.png",
-      "darkSide": "left",
       "classes": "apache"
     },
     {
@@ -33,8 +30,7 @@
       "largeText": "psychedelic drumkit",
       "title": "Psychedelic Drumkit",
       "href": "https://themarquisdesheric.github.io/drumkit/",
-      "src": "drumkit2.png",
-      "darkSide": "right",
+      "src": "drumkit.png",
       "classes": "card-image"
     },
     {
@@ -43,7 +39,6 @@
       "title": "Bookify",
       "href": "https://themarquisdesheric.github.io/booklist-redux/",
       "src": "bookify.png",
-      "darkSide": "left",
       "classes": "card-image"
     },
     {
@@ -52,7 +47,6 @@
       "title": "Collatz Music",
       "href": "https://themarquisdesheric.github.io/collatz-conjecture-music/",
       "src": "collatz.gif",
-      "darkSide": "right",
       "classes": "card-image"
     },
     {
@@ -61,7 +55,6 @@
       "title": "Education is important.",
       "href": "https://www.linkedin.com/in/yuval-allweil/",
       "src": "linkedin.png",
-      "darkSide": "left",
       "classes": "education card-image"
     }
   ]

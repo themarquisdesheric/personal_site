@@ -15,8 +15,8 @@ import './App.css';
 
 const App = () => (
   <main>
-    {data.images.map(row => 
-      <ComposeImageRow {...row} key={row.src} />
+    {data.images.map( (row, i) => 
+      <ComposeImageRow {...row} darkSide={i} key={row.src} />
     )}
     
     <Bio />
@@ -27,7 +27,7 @@ const App = () => (
       let Info = textContainers[i];
       
       return (
-        <ComposeInfoRow {...row} key={row.src}>
+        <ComposeInfoRow {...row} darkSide={i} key={row.src}>
           <Info />
         </ComposeInfoRow>
       );
