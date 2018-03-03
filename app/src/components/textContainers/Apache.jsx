@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ApacheText = () => (
+const Apache = () => (
   <div className="content has-text-centered">
     <a 
       href="https://datafu.incubator.apache.org/" 
@@ -21,4 +21,4 @@ const ApacheText = () => (
   </div>
 );
 
-export default ApacheText;
+export default Apache;

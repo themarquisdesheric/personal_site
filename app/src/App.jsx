@@ -4,11 +4,11 @@ import ComposeImageRow from './components/ComposeImageRow';
 import ComposeInfoRow from './components/ComposeInfoRow';
 import Bio from './components/Bio';
 import Level from './components/Level';
-import ApacheText from './components/textContainers/ApacheText';
+import Apache from './components/textContainers/Apache';
 import Drumkit from './components/textContainers/Drumkit';
 import Bookify from './components/textContainers/Bookify';
-import CollatzText from './components/textContainers/CollatzText';
-import EducationText from './components/textContainers/EducationText';
+import Collatz from './components/textContainers/Collatz';
+import Education from './components/textContainers/Education';
 import Footer from './components/Footer';
 import './App.css'; 
 import Contact from './components/Contact';
@@ -23,7 +23,7 @@ const App = () => (
     <Level />
     
     {data.info.map( (row, i) => {
-      const textContainers = [ApacheText, Drumkit, Bookify, CollatzText, EducationText];
+      const textContainers = [Apache, Drumkit, Bookify, Collatz, Education];
       let Info = textContainers[i];
       
       return (

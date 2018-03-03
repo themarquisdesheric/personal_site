@@ -1,6 +1,6 @@
 import React from 'react';
 
-const EducationText = () => (
+const Education = () => (
   <div className="content has-text-centered">
     <p>
       Yuval is first and foremost an autodidact, and loves taking a good course just as much as reading a good book.<br /><br />
@@ -14,4 +14,4 @@ const EducationText = () => (
   </div>
 );
 
-export default EducationText;
+export default Education;
