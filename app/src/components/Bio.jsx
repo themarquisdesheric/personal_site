@@ -32,7 +32,10 @@ const Bio = () => {
                       He has served on the management teams of several startups, from a record-breaking e-commerce outfit to a nationally-acclaimed science magazine.
                     </p>
                     <p>
-                      {"Yuval loves helping others, and firmly believes that you won't get ahead without helping those around you. "}
+                      {"Yuval's passion is in frontend development, and his favorite task is to bring a wireframe to pixel-perfect and responsive life. Whether it's React or vanilla JavaScript, you can be sure Yuval is having fun with it."} 
+                    </p>
+                    <p>
+                      {"He loves helping others, and firmly believes that you won't get ahead without helping those around you. "}
                       He is a dedicated teacher whose training programs and workshops have been professionally recognized, and is currently at&nbsp;
                       <a 
                         href="http://alchemycodelab.com"

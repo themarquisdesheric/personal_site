@@ -1,5 +1,5 @@
 /*! bulma.io v0.6.1 | MIT License | github.com/jgthms/bulma */
-@import url(../node_modules/antd/dist/antd.css);
+@import url(../node_modules/antd/lib/tooltip/style/index.css);
 @keyframes spinAround {
   from {
     transform: rotate(0deg); }
@@ -6481,7 +6481,7 @@ label.panel-block {
     margin: 0 auto 1em; }
     .card figure.apache {
       width: 45%; }
-    .card figure.collatz, .card figure.education {
+    .card figure.card-image {
       width: 75%;
       border: 1px solid #2e2e2e;
       border-radius: 1%; }
@@ -6523,6 +6523,14 @@ label.panel-block {
   margin: auto;
   text-align: justify; }
 
+.level {
+  background-color: whitesmoke;
+  height: 100px; }
+  .level img {
+    height: 35px; }
+  .level:not(:last-child) {
+    margin-bottom: 0; }
+
 .italic-text {
   font-family: 'Playfair Display', serif;
   font-style: italic;
@@ -6554,3 +6562,15 @@ label.panel-block {
 
 footer {
   padding: 2em; }
+
+@media (max-width: 768px) {
+  .level {
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly; }
+    .level .level-item {
+      flex-basis: 150px;
+      flex-shrink: 0;
+      padding: 1em;
+      margin-bottom: 0; } }
