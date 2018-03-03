@@ -5,7 +5,7 @@ import TextColumn from '../components/TextColumn';
 import ImageColumn from '../components/ImageColumn';
 import Hero from '../components/Hero';
 import Image from '../components/Image';
-import ContactText from './textContainers/ContactText';
+import ContactText from './textContainers/Contact';
 
 const Contact = () => {
   return (

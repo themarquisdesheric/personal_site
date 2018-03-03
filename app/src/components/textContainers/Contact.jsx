@@ -2,7 +2,7 @@ import React from 'react';
 import 'font-awesome/css/font-awesome.css';
 import Icon from '../Icon';
 
-const ContactText = () => {
+const Contact = () => {
   const icons = [
     {
       href: 'mailto:themarquisdesheric@gmail.com', 
@@ -40,4 +40,4 @@ const ContactText = () => {
   );
 };
 
-export default ContactText;
+export default Contact;

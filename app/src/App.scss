@@ -24,8 +24,7 @@
         width: 45%;
       }
 
-      &.collatz,
-      &.education {
+      &.card-image {
         width: 75%;
         border: 1px solid lighten(black, 18%);
         border-radius: 1%;
@@ -83,7 +82,7 @@
     margin: 50px;
     font-size: 100px;
   }
-
+  
   p {
     max-width: 950px;
     margin: auto;
