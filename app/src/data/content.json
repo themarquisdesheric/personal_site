@@ -29,13 +29,31 @@
       "classes": "apache"
     },
     {
+      "smallText": "made a",
+      "largeText": "psychedelic drumkit",
+      "title": "Psychedelic Drumkit",
+      "href": "https://themarquisdesheric.github.io/drumkit/",
+      "src": "drumkit.png",
+      "darkSide": "right",
+      "classes": "card-image"
+    },
+    {
+      "smallText": "created a",
+      "largeText": "reading app",
+      "title": "Bookify",
+      "href": "https://themarquisdesheric.github.io/booklist-redux/",
+      "src": "bookify.png",
+      "darkSide": "left",
+      "classes": "card-image"
+    },
+    {
       "smallText": "and turned the collatz conjecture into a",
       "largeText": "melody machine",
       "title": "Collatz Music",
       "href": "https://themarquisdesheric.github.io/collatz-conjecture-music/",
       "src": "collatz.gif",
       "darkSide": "right",
-      "classes": "collatz"
+      "classes": "card-image"
     },
     {
       "smallText": "someone who is",
@@ -44,7 +62,7 @@
       "href": "https://www.linkedin.com/in/yuval-allweil/",
       "src": "linkedin.png",
       "darkSide": "left",
-      "classes": "education"
+      "classes": "education card-image"
     }
   ]
 }
