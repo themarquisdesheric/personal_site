@@ -9,9 +9,9 @@ import Drumkit from './components/textContainers/Drumkit';
 import Bookify from './components/textContainers/Bookify';
 import Collatz from './components/textContainers/Collatz';
 import Education from './components/textContainers/Education';
+import Contact from './components/Contact';
 import Footer from './components/Footer';
 import './App.css'; 
-import Contact from './components/Contact';
 
 const App = () => (
   <main>
