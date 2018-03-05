@@ -37,6 +37,10 @@ const ComposeInfoRow = ({ smallText, largeText, title, href, src, darkSide, clas
   </div>
 );
 
+ComposeInfoRow.defaultProps = {
+  classes: ''
+};
+
 ComposeInfoRow.propTypes = {
   smallText: PropTypes.string.isRequired,
   largeText: PropTypes.string.isRequired,
@@ -44,7 +48,7 @@ ComposeInfoRow.propTypes = {
   href: PropTypes.string.isRequired,
   src: PropTypes.string.isRequired,
   darkSide: PropTypes.number.isRequired,
-  classes: PropTypes.string.isRequired,
+  classes: PropTypes.string,
   children: PropTypes.node.isRequired
 };
 

@@ -17,19 +17,29 @@
 
   figure {
     margin: 0 auto 1em;
-    
-    &.apache { width: 45%; }
+    transition: .2s ease-in-out;
 
-    &.card-image {
+    &:hover { transform: scale(1.1); }
+
+    &.image {
       width: 75%;
       border: 1px solid lighten(black, 18%);
       border-radius: 1%;
     }
-
+    
+    &.apache { 
+      width: 45%; 
+      border: none;
+    }
+    
     &.education {
       padding: 1em;
       border: 1px solid $grey-lighter;
     }
+    
+    img[src="collatz.gif"] { border: 1px solid lighten(black, 25%); }
+
+    img[src="drumkit.png"] { border-radius: 1%; } 
   }
 
   .title {

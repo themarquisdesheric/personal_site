@@ -30,24 +30,21 @@
       "largeText": "psychedelic drumkit",
       "title": "Psychedelic Drumkit",
       "href": "https://themarquisdesheric.github.io/drumkit/",
-      "src": "drumkit.png",
-      "classes": "card-image"
+      "src": "drumkit.png"
     },
     {
       "smallText": "created a",
       "largeText": "reading app",
       "title": "Bookify",
       "href": "https://themarquisdesheric.github.io/booklist-redux/",
-      "src": "bookify.png",
-      "classes": "card-image"
+      "src": "bookify.png"
     },
     {
       "smallText": "and turned the collatz conjecture into a",
       "largeText": "melody machine",
       "title": "Collatz Music",
       "href": "https://themarquisdesheric.github.io/collatz-conjecture-music/",
-      "src": "collatz.gif",
-      "classes": "card-image"
+      "src": "collatz.gif"
     },
     {
       "smallText": "someone who is",
@@ -55,7 +52,7 @@
       "title": "Education is important.",
       "href": "https://www.linkedin.com/in/yuval-allweil/",
       "src": "linkedin.png",
-      "classes": "education card-image"
+      "classes": "education"
     }
   ]
 }
