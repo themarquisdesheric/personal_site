@@ -110,8 +110,9 @@
     font-size: 4.5em;
     color: $dark;
     margin: .3em 0;
+    transition: .3s;
 
-    &:hover { opacity: 0.85; }
+    &:hover { transform: scale(1.08); }
   }
 
   .fa-envelope-o { color: darken($yellow, 15%); }
