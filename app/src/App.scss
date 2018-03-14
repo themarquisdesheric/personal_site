@@ -72,9 +72,12 @@
 .bio {
   .dropcap { font: bold 1.6em 'Playfair Display'; }
 
+  .animate-bio { transform: scale(1.25); }
+  
   h1.bio-title {
     margin: 50px;
-    font-size: 100px;
+    font-size: 80px;
+    transition: transform 1s .75s;
   }
   
   p {
