@@ -9,7 +9,8 @@
     "gh-pages": "^1.1.0",
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
-    "react-dom": "^16.2.0"
+    "react-dom": "^16.2.0",
+    "react-waypoint": "^8.0.1"
   },
   "devDependencies": {
     "eslint": "^4.13.1",
