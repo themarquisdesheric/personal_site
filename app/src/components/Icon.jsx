@@ -3,7 +3,11 @@ import PropTypes from 'prop-types';
 import Tooltip from 'antd/lib/tooltip';
 
 const Icon = ({ href, classes, text, i }) => (
-  <Tooltip placement={i % 2 === 0 ? 'left' : 'right'} title={text}>
+  <Tooltip 
+    title={text} 
+    mouseEnterDelay={.3}
+    placement={i % 2 === 0 ? 'left' : 'right'} 
+  >
     <a 
       href={href}
       target="_blank"

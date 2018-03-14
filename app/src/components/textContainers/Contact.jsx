@@ -31,20 +31,16 @@ class Contact extends Component {
     
     return (
       <div>
-        <div className="content has-text-centered">
-          <div className="icons">
-
-            <Waypoint 
-              onEnter={() => this.heading.classList.add('animate-contact')}
-              onLeave={() => this.heading.classList.remove('animate-contact')}
-            >
-              <p ref={heading => this.heading = heading} className="contact-heading">get in touch</p>
-            </Waypoint>
-            
-            {icons.map( (icon, i) => 
-              <Icon {...icon} key={icon.text} i={i} />
-            )}
-          </div>
+        <Waypoint 
+          onEnter={() => this.heading.classList.add('animate-contact')}
+          onLeave={() => this.heading.classList.remove('animate-contact')}
+        >
+          <p ref={heading => this.heading = heading} className="contact-heading">get in touch</p>
+        </Waypoint>
+        <div className="icons content has-text-centered">
+          {icons.map( (icon, i) => 
+            <Icon {...icon} key={icon.text} i={i} />
+          )}
         </div>
       </div>
     );

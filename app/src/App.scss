@@ -111,14 +111,18 @@
 
 .contact-heading { 
   font-size: 3em; 
+  margin-top: 1em;
   position: relative;
   right: 500px;
   transition: 800ms 600ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .icons {
+  width: 75px;
+
   i {
     display: block;
+    width: 75px;
     font-size: 4.5em;
     color: $dark;
     margin: .3em 0;
@@ -152,4 +156,6 @@ footer { padding: 2em; }
       margin-bottom: 0;
     }
   }
+
+  .icons { padding-bottom: 1em; }
 }
