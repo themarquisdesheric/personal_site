@@ -1,3 +1,5 @@
+import calcLangTotals from './utilities';
+
 describe('github dashboard', () => {
   const repo = {
     HTML: 300, 
