@@ -13,37 +13,45 @@ class Dashboard extends Component {
       Authorization: `token ${process.env.REACT_APP_GITHUB_KEY}`,
     });
 
-    fetch('https://api.github.com/users/themarquisdesheric/repos?per_page=100', { headers })
-      .then(res => res.json())
-      .then(repos => repos.filter(repo => 
-        repo.owner.login === 'themarquisdesheric' && 
-        repo.name !== 'incubator-datafu'))
-      .then(repos => {
-        const langTotals = {
-          total: 0
-        };
-        // get language statistics for each repo
-        const promises = repos.map(repo => 
-          fetch(repo.languages_url, { headers })
-            .then(res => res.json())
-            .then(repoStats => {
-              calcLangTotals(repoStats, langTotals);
-              
-              const repoTotal = calcRepoTotal(repoStats);
-  
-              langTotals.total += repoTotal;
-  
-              return repo;
-            }));
+    const percentages = JSON.parse(sessionStorage.getItem('percentages'));
 
-        Promise.all(promises)
-          .then( () => {
-            const langPercentages = calcLangPercentages(langTotals);
+    if (percentages) this.setState({ langPercentages: percentages });
 
-            this.setState({ langPercentages });
-          })
-          .catch(err => console.error('whoops!', err));
-      });
+    else {
+      fetch('https://api.github.com/users/themarquisdesheric/repos?per_page=100', { headers })
+        .then(res => res.json())
+        .then(repos => repos.filter(repo => 
+          repo.owner.login === 'themarquisdesheric' && 
+          repo.name !== 'incubator-datafu'))
+        .then(repos => {
+          const langTotals = {
+            total: 0
+          };
+          // get language statistics for each repo
+          const promises = repos.map(repo => 
+            fetch(repo.languages_url, { headers })
+              .then(res => res.json())
+              .then(repoStats => {
+                calcLangTotals(repoStats, langTotals);
+                
+                const repoTotal = calcRepoTotal(repoStats);
+    
+                langTotals.total += repoTotal;
+    
+                return repo;
+              }));
+
+          Promise.all(promises)
+            .then( () => {
+              const langPercentages = calcLangPercentages(langTotals);
+
+              sessionStorage.setItem('percentages', JSON.stringify(langPercentages));
+
+              this.setState({ langPercentages });
+            })
+            .catch(err => console.error('whoops!', err));
+        });
+    }
   }
 
   render() {
