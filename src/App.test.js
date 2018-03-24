@@ -1,4 +1,4 @@
-import calcLangTotals from './utilities';
+import { calcRepoTotal, calcLangPercentages, calcLangTotals }  from './utilities';
 
 describe('github dashboard', () => {
   const repo = {

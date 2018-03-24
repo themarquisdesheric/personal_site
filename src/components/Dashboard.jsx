@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import fetch from 'isomorphic-fetch';
-import calcLangTotals from '../utilities';
+import { calcLangTotals, calcRepoTotal, calcLangPercentages } from '../utilities';
 
 class Dashboard extends Component {
   state = {
@@ -32,9 +32,10 @@ class Dashboard extends Component {
   }
 
   render() {
+    const { pieChartTotals } = this.state;
     return (
       <article id="dashboard">
-        { this.state.pieChartTotals ? JSON.stringify(this.state.pieChartTotals) : null}
+        { pieChartTotals ? JSON.stringify(pieChartTotals) : null}
       </article>
     );
   }
