@@ -4,6 +4,7 @@ import ComposeImageRow from './components/ComposeImageRow';
 import ComposeInfoRow from './components/ComposeInfoRow';
 import Bio from './components/Bio';
 import Level from './components/Level';
+import Dashboard from './components/Dashboard';
 import Apache from './components/textContainers/Apache';
 import Drumkit from './components/textContainers/Drumkit';
 import Bookify from './components/textContainers/Bookify';
@@ -21,6 +22,7 @@ const App = () => (
     
     <Bio />
     <Level />
+    <Dashboard />
     
     {data.info.map( (row, i) => {
       const textContainers = [Apache, Drumkit, Bookify, Collatz, Education];

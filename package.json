@@ -5,8 +5,11 @@
   "dependencies": {
     "antd": "^3.1.1",
     "bulma": "^0.6.1",
+    "chart.js": "^2.7.2",
+    "chart.piecelabel.js": "^0.9.0",
     "font-awesome": "^4.7.0",
     "gh-pages": "^1.1.0",
+    "isomorphic-fetch": "^2.2.1",
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
@@ -20,7 +23,7 @@
     "eslint-plugin-react": "^7.5.1",
     "node-sass-chokidar": "0.0.3",
     "npm-run-all": "^4.1.2",
-    "react-scripts": "1.0.17"
+    "react-scripts": "1.1.1"
   },
   "scripts": {
     "build-css": "node-sass-chokidar src/ -o src/",
