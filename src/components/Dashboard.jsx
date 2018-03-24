@@ -4,7 +4,7 @@ import { calcLangTotals, calcRepoTotal, calcLangPercentages } from '../utilities
 
 class Dashboard extends Component {
   state = {
-    pieChartTotals: null
+    langPercentages: null
   }
 
   componentDidMount() {
@@ -18,24 +18,38 @@ class Dashboard extends Component {
         repo.owner.login === 'themarquisdesheric' && 
         repo.name !== 'incubator-datafu'))
       .then(repos => {
-        const pieChartTotals = {};
+        const langTotals = {
+          total: 0
+        };
         // get language statistics for each repo
         const promises = repos.map(repo => 
           fetch(repo.languages_url, { headers })
             .then(res => res.json())
-            .then(repoStats => calcLangTotals(repoStats, pieChartTotals)));
+            .then(repoStats => {
+              calcLangTotals(repoStats, langTotals);
+              
+              const repoTotal = calcRepoTotal(repoStats);
+  
+              langTotals.total += repoTotal;
+  
+              return repo;
+            }));
 
         Promise.all(promises)
-          .then( () => this.setState({ pieChartTotals }))
+          .then( () => {
+            const langPercentages = calcLangPercentages(langTotals);
+
+            this.setState({ langPercentages });
+          })
           .catch(err => console.error('whoops!', err));
       });
   }
 
   render() {
-    const { pieChartTotals } = this.state;
+    const { langPercentages } = this.state;
     return (
       <article id="dashboard">
-        { pieChartTotals ? JSON.stringify(pieChartTotals) : null}
+        { langPercentages ? JSON.stringify(langPercentages) : null}
       </article>
     );
   }
