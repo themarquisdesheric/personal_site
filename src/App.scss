@@ -96,6 +96,16 @@
   &:not(:last-child) { margin-bottom: 0; }
 }
 
+#dashboard {
+  display: flex;
+  flex-wrap: wrap;
+  
+  #chart { 
+    padding: 2em 0;
+    min-width: 50%;
+  }
+}
+
 .italic-text, 
 .normal-text,
 .contact-heading { font-family: 'Playfair Display', serif; }
