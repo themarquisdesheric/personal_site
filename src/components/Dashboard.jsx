@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import fetch from 'isomorphic-fetch';
 import { calcLangTotals, calcRepoTotal, calcLangPercentages } from '../utilities';
 import PieChart from './PieChart';
+import AppCounter from './AppCounter';
 
 class Dashboard extends Component {
   state = {
@@ -109,6 +110,10 @@ class Dashboard extends Component {
     const { langPercentages } = this.state;
     return (
       <article id="dashboard">
+        <AppCounter type="node" count={this.state.stats.node} />
+        <AppCounter type="react" count={this.state.stats.react} />
+        <AppCounter type="mongo" count={this.state.stats.mongo} />
+        <AppCounter type="express" count={this.state.stats.express} />
         {langPercentages && <PieChart langTotals={langPercentages} />}
       </article>
     );
