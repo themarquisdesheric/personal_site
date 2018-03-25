@@ -107,13 +107,13 @@ class Dashboard extends Component {
   }
 
   render() {
-    const { langPercentages } = this.state;
+    const { langPercentages, stats } = this.state;
     return (
       <article id="dashboard">
-        <AppCounter type="node" count={this.state.stats.node} />
-        <AppCounter type="react" count={this.state.stats.react} />
-        <AppCounter type="mongo" count={this.state.stats.mongo} />
-        <AppCounter type="express" count={this.state.stats.express} />
+        {stats.node && <AppCounter type="node" apps={this.state.stats.node} />}
+        {stats.node && <AppCounter type="react" apps={this.state.stats.react} />}
+        {stats.node && <AppCounter type="mongo" apps={this.state.stats.mongo} />}
+        {stats.node && <AppCounter type="express" apps={this.state.stats.express} />}
         {langPercentages && <PieChart langTotals={langPercentages} />}
       </article>
     );
