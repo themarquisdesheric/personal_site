@@ -110,6 +110,9 @@ class Dashboard extends Component {
     const { langPercentages, stats } = this.state;
     return (
       <article id="dashboard">
+        <header>
+          <h2 className="title">Github Statistics</h2>
+        </header>
         {stats.node && Object.entries(stats).map( ([key, val]) => 
           <AppCounter key={key} type={key} apps={val} />
         )}

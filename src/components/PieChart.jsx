@@ -34,10 +34,9 @@ class PieChart extends Component {
       title: {
         display: true,
         position: 'bottom',
-        text: 'Information obtained via the GitHub API',
+        text: 'Data obtained via the GitHub API',
       },
       tooltips: false,
-      rotation: Math.PI * 2.565,
       cutoutPercentage: this.calcCutOutSize(window.innerWidth)
     };
     
@@ -47,8 +46,10 @@ class PieChart extends Component {
       data: {
         labels,
         datasets: [{
-          backgroundColor: ['rgba(156, 39, 176, 1)', 'rgba(233, 30, 99, 1)', 'rgba(33, 150, 243, 1)'],
-          data: values
+          backgroundColor: ['rgba(53, 222, 113, 1)', 'rgba(171, 102, 255, 1)', 'rgba(70, 124, 255, 1)'],
+          data: values,
+          borderColor: 'black',
+          borderWidth: 2
         }]
       }
     });
@@ -60,31 +61,53 @@ class PieChart extends Component {
     this.chart.destroy();
   }
 
+  // make handler to update chart on resize -- turn off animation for when you do that
+
+  setBackground = (screenX) => {
+    if (screenX > 768) {
+      return `url('github-large.png') no-repeat 50% ${this.calcBackgroundOffset(screenX)}`;
+    } else if (screenX > 700) {
+      return `url('github-small.png') no-repeat 50% ${this.calcBackgroundOffset(screenX)}`;
+    } else {
+      return 'transparent';
+    }
+  }
+
   calcCutOutSize = (screenX) => {
-    if (screenX > 1320) return 25;
+    console.log(screenX);
+    if (screenX > 1340) return 24;
     else if (screenX > 1270) return 26;
-    else if (screenX > 1200) return 30;
-    else if (screenX > 1100) return 31;
-    else if (screenX > 1000) return 34;
+    else if (screenX > 1200) return 28;
+    else if (screenX > 1150) return 29;
+    else if (screenX > 1080) return 31;
+    else if (screenX > 1010) return 34;
+    else if (screenX > 970) return 35;
     else if (screenX > 900) return 39;
-    else if (screenX > 850) return 44;
-    else if (screenX > 800) return 47;
-    else if (screenX > 768) return 51;
-    else if (screenX > 700) return 29; 
-    else if (screenX > 650) return 34; 
-    else if (screenX > 600) return 38; 
-    else if (screenX > 550) return 42;
-    else if (screenX > 520) return 47;
-    else if (screenX > 500) return 51;
-    else if (screenX > 470) return 55;
-    else if (screenX >= 400) return 0;
+    else if (screenX > 850) return 43;
+    else if (screenX > 800) return 45;
+    else if (screenX > 768) return 50;
+    else if (screenX > 750) return 28; 
+    else if (screenX > 700) return 30; 
     else return 0;
+  }
+
+  calcBackgroundOffset = (screenX) => {
+    if (screenX > 1080) return '49.6%';
+    else if (screenX > 970) return '49.5%';
+    else if (screenX > 970) return '49.4%';
+    else if (screenX > 800) return '49.3%';
+    else return '49.2%';
   }
 
   render () {
     return (
       <div id="chart">
-        <canvas ref={canvas => this.canvas = canvas} />        
+        <canvas 
+          ref={canvas => this.canvas = canvas} 
+          style={{ 
+            background: this.setBackground(window.innerWidth) 
+          }}
+        />        
       </div>
     );
   }

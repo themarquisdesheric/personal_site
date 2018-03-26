@@ -22,7 +22,6 @@ const App = () => (
     
     <Bio />
     <Level />
-    <Dashboard />
     
     {data.info.map( (row, i) => {
       const textContainers = [Apache, Drumkit, Bookify, Collatz, Education];
@@ -35,6 +34,7 @@ const App = () => (
       );
     })}
 
+    <Dashboard />
     <Contact />
     <Footer />
   </main>
