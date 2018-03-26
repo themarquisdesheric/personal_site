@@ -110,10 +110,10 @@ class Dashboard extends Component {
     const { langPercentages, stats } = this.state;
     return (
       <article id="dashboard">
-        {stats.node && <AppCounter type="node" apps={this.state.stats.node} />}
-        {stats.node && <AppCounter type="react" apps={this.state.stats.react} />}
-        {stats.node && <AppCounter type="mongo" apps={this.state.stats.mongo} />}
-        {stats.node && <AppCounter type="express" apps={this.state.stats.express} />}
+        {stats.node && Object.entries(stats).map( ([key, val]) => 
+          <AppCounter key={key} type={key} apps={val} />
+        )}
+
         {langPercentages && <PieChart langTotals={langPercentages} />}
       </article>
     );
