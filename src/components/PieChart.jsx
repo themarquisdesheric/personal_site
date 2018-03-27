@@ -64,17 +64,14 @@ class PieChart extends Component {
   // make handler to update chart on resize -- turn off animation for when you do that
 
   setBackground = (screenX) => {
-    if (screenX > 768) {
+    if (screenX > 850) {
       return `url('github-large.png') no-repeat 50% ${this.calcBackgroundOffset(screenX)}`;
     } else if (screenX > 700) {
       return `url('github-small.png') no-repeat 50% ${this.calcBackgroundOffset(screenX)}`;
-    } else {
-      return 'transparent';
-    }
+    } else return 'transparent';
   }
 
   calcCutOutSize = (screenX) => {
-    console.log(screenX);
     if (screenX > 1340) return 24;
     else if (screenX > 1270) return 26;
     else if (screenX > 1200) return 28;
@@ -84,18 +81,15 @@ class PieChart extends Component {
     else if (screenX > 970) return 35;
     else if (screenX > 900) return 39;
     else if (screenX > 850) return 43;
-    else if (screenX > 800) return 45;
-    else if (screenX > 768) return 50;
-    else if (screenX > 750) return 28; 
-    else if (screenX > 700) return 30; 
+    else if (screenX > 768) return 24;
+    else if (screenX > 700) return 28;
     else return 0;
   }
 
   calcBackgroundOffset = (screenX) => {
     if (screenX > 1080) return '49.6%';
-    else if (screenX > 970) return '49.5%';
-    else if (screenX > 970) return '49.4%';
-    else if (screenX > 800) return '49.3%';
+    else if (screenX > 850) return '49%';
+    else if (screenX > 800) return '49.5%';
     else return '49.2%';
   }
 
