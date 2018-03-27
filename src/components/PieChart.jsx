@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Chart from 'chart.js';
 import pieceLabel from 'chart.piecelabel.js';
+import AppCounter from './AppCounter';
 
 class PieChart extends Component {
   componentDidMount() {
@@ -61,8 +62,6 @@ class PieChart extends Component {
     this.chart.destroy();
   }
 
-  // make handler to update chart on resize -- turn off animation for when you do that
-
   setBackground = (screenX) => {
     if (screenX > 850) {
       return `url('github-large.png') no-repeat 50% ${this.calcBackgroundOffset(screenX)}`;
@@ -94,6 +93,8 @@ class PieChart extends Component {
   }
 
   render () {
+    const { stats } = this.props;
+
     return (
       <div id="chart">
         <canvas 
@@ -102,6 +103,10 @@ class PieChart extends Component {
             background: this.setBackground(window.innerWidth) 
           }}
         />        
+
+        {stats.node && Object.entries(stats).map( ([key, val]) => 
+          <AppCounter key={key} type={key} apps={val} />
+        )}
       </div>
     );
   }
@@ -112,6 +117,12 @@ PieChart.propTypes = {
     HTML: PropTypes.number,
     CSS: PropTypes.number,
     JavaScript: PropTypes.number
+  }).isRequired,
+  stats: PropTypes.shape({
+    node: PropTypes.number.isRequired,
+    mongo: PropTypes.number.isRequired,
+    express: PropTypes.number.isRequired,
+    react: PropTypes.number.isRequired
   }).isRequired
 };
 

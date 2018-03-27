@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import fetch from 'isomorphic-fetch';
 import { calcLangTotals, calcRepoTotal, calcLangPercentages } from '../utilities';
 import PieChart from './PieChart';
-import AppCounter from './AppCounter';
+
 
 class Dashboard extends Component {
   state = {
@@ -113,11 +113,12 @@ class Dashboard extends Component {
         <header>
           <h2 className="title">Github Statistics</h2>
         </header>
-        {stats.node && Object.entries(stats).map( ([key, val]) => 
-          <AppCounter key={key} type={key} apps={val} />
-        )}
 
-        {langPercentages && <PieChart langTotals={langPercentages} />}
+        {/* make the numbers rotate on the y axis
+
+          make contact letters flip up?*/}
+
+        {langPercentages && <PieChart langTotals={langPercentages} stats={stats} />}
       </article>
     );
   }
