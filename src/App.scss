@@ -98,12 +98,61 @@
 
 #dashboard {
   display: flex;
-  background: url('assets/github-large.png') no-repeat 50% 49.7%;
+  flex-direction: column;
+  background: linear-gradient(rgb(235, 235, 235), rgb(242, 242, 242));
+  position: relative;
+  
+  h2 {
+    width: fit-content;
+    margin: 0 auto;
+    padding: 2rem 0 0;
+    font-size: 4em;
+    font-family: 'Playfair Display';
+  }
   
   #chart { 
-    margin: 2em auto;
+    margin: 2em auto 4em;
     min-width: 80%;
     max-width: 100%;
+  }
+
+  .app-counter {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    position: absolute;
+    width: 101px;
+
+    &.react {
+      top: 20%;
+      left: 10%;
+    }
+
+    &.node {
+      top: 20%;
+      right: 10%;
+    }
+    
+    &.express {
+      bottom: 20%;
+      left: 10%;
+    }
+    
+    &.mongo {
+      bottom: 20%;
+      right: 10%;
+    }
+
+    .app-type {
+      text-transform: uppercase;
+      font-size: 1.25em;
+    }
+
+    .app-count {
+      font-weight: bold;
+      font-size: 3.75em;
+      line-height: 1.1em;
+    }
   }
 }
 
@@ -153,8 +202,48 @@
 
 footer { padding: 2em; }
 
-@media (min-width: 1190) {
-  background: url('assets/github-large.png') no-repeat 50% 49.7%;
+@media (max-width: 950px) {
+  #dashboard {
+    h2 {
+      font-size: 2em;
+    }
+
+    .app-counter {
+      .app-type { font-size: .75rem; }
+  
+      .app-count { font-size: 1.75rem; }
+    }
+  }
+}
+
+@media (max-width: 660px) {
+  #dashboard {
+    .app-counter {
+      .app-type { font-size: .5rem; }
+  
+      .app-count { font-size: 1.5rem; }
+
+      &.react {
+        top: 25%;
+        left: 0%;
+      }
+  
+      &.node {
+        top: 25%;
+        right: 0%;
+      }
+      
+      &.express {
+        bottom: 25%;
+        left: 0%;
+      }
+      
+      &.mongo {
+        bottom: 25%;
+        right: 0%;
+      }
+    }
+  }
 }
 
 @media (max-width: 768px) {
@@ -171,16 +260,6 @@ footer { padding: 2em; }
       margin-bottom: 0;
     }
   }
-  
-  #dashboard { 
-    background: url('assets/github-small.png') no-repeat 50% 49.5%;
-  }
 
   .icons { padding-bottom: 1em; }
-}
-
-@media (max-width: 470px) {
-  #dashboard {
-    background: transparent;
-  }
 }

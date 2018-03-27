@@ -3,9 +3,16 @@ import fetch from 'isomorphic-fetch';
 import { calcLangTotals, calcRepoTotal, calcLangPercentages } from '../utilities';
 import PieChart from './PieChart';
 
+
 class Dashboard extends Component {
   state = {
-    langPercentages: null
+    langPercentages: null,
+    stats: {
+      mongo: 0,
+      node: 0,
+      express: 0,
+      react: 0
+    }
   }
 
   componentDidMount() {
@@ -13,9 +20,9 @@ class Dashboard extends Component {
       Authorization: `token ${process.env.REACT_APP_GITHUB_KEY}`,
     });
 
-    const percentages = JSON.parse(sessionStorage.getItem('percentages'));
+    const store = JSON.parse(sessionStorage.getItem('store'));
 
-    if (percentages) this.setState({ langPercentages: percentages });
+    if (store) this.setState({ ...store });
 
     else {
       fetch('https://api.github.com/users/themarquisdesheric/repos?per_page=100', { headers })
@@ -42,12 +49,57 @@ class Dashboard extends Component {
               }));
 
           Promise.all(promises)
-            .then( () => {
+            .then(repos => {
               const langPercentages = calcLangPercentages(langTotals);
 
-              sessionStorage.setItem('percentages', JSON.stringify(langPercentages));
+              // set state to render pie chart, then fetch stack stats
+              this.setState({ langPercentages }, () => {
+                const promises = repos.map(repo =>
+                  // fetch content tree for each repo
+                  fetch(`https://api.github.com/repos/themarquisdesheric/${repo.name}/git/trees/master?recursive=1`
+                    , { headers })
+                    .then(res => res.json())
+                    .then(res => {
+                      const packageJSONIndex = res.tree.findIndex(item => item.path.includes('package.json'));
+        
+                      if (packageJSONIndex > -1) {
+                        repo.node = true;
+                        // fetch package.json
+                        return fetch(res.tree[packageJSONIndex].url, { headers })
+                          .then(res => res.json())
+                          .then(encoded => {
+                            // convert from base64 encoding, then stringify to search for keywords
+                            const packageJSON = JSON.stringify(window.atob(encoded.content));
+        
+                            if (packageJSON.includes('mongo')) repo.mongo = true;
+                            if (packageJSON.includes('express')) repo.express = true;
+                            if (packageJSON.includes('react')) repo.react = true;
+        
+                            return repo;
+                          });
+                      } 
+                      else return repo;
+                    }));
+                
+                Promise.all(promises)
+                  .then(projects => {
+                    const stats = projects.reduce( (totals, project) => {
+                      if (project.mongo) totals.mongo++;
+                      if (project.node) totals.node++;
+                      if (project.express) totals.express++;
+                      if (project.react) totals.react++;
+                      
+                      return totals;
+                    }, { ...this.state.stats });
 
-              this.setState({ langPercentages });
+                    sessionStorage.setItem('store', JSON.stringify({
+                      langPercentages, 
+                      stats
+                    }));
+        
+                    this.setState({ stats });
+                  });
+              });
             })
             .catch(err => console.error('whoops!', err));
         });
@@ -55,10 +107,18 @@ class Dashboard extends Component {
   }
 
   render() {
-    const { langPercentages } = this.state;
+    const { langPercentages, stats } = this.state;
     return (
       <article id="dashboard">
-        {langPercentages && <PieChart langTotals={langPercentages} />}
+        <header>
+          <h2 className="title">Github Statistics</h2>
+        </header>
+
+        {/* make the numbers rotate on the y axis
+
+          make contact letters flip up?*/}
+
+        {langPercentages && <PieChart langTotals={langPercentages} stats={stats} />}
       </article>
     );
   }
