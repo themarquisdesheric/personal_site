@@ -143,8 +143,14 @@
       font-weight: bold;
       font-size: 3.75em;
       line-height: 1.1em;
+
+      &:hover { animation: rotate 1.4s linear infinite; }
     }
   }
+}
+
+@keyframes rotate {
+  100% { transform: rotateY(360deg); }
 }
 
 .italic-text, 
