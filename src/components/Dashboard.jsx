@@ -110,15 +110,13 @@ class Dashboard extends Component {
     const { langPercentages, stats } = this.state;
     return (
       <article id="dashboard">
-        <header>
-          <h2 className="title">Github Statistics</h2>
-        </header>
+        <main>
+          <header>
+            <h2 className="title">Github Statistics</h2>
+          </header>
 
-        {/* make the numbers rotate on the y axis
-
-          make contact letters flip up?*/}
-
-        {langPercentages && <PieChart langTotals={langPercentages} stats={stats} />}
+          {langPercentages && <PieChart langTotals={langPercentages} stats={stats} />}
+        </main>
       </article>
     );
   }
