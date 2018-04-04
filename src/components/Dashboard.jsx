@@ -114,7 +114,7 @@ class Dashboard extends Component {
           <header>
             <h2 className="title">Github Statistics</h2>
           </header>
-
+        
           {langPercentages && <PieChart langTotals={langPercentages} stats={stats} />}
         </main>
       </article>

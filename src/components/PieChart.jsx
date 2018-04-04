@@ -103,10 +103,12 @@ class PieChart extends Component {
             background: this.setBackground(window.innerWidth) 
           }}
         />        
-
-        {stats.node && Object.entries(stats).map( ([key, val]) => 
-          <AppCounter key={key} type={key} apps={val} />
-        )}
+        
+        <section>
+          {stats.node && Object.entries(stats).map( ([key, val]) => 
+            <AppCounter key={key} type={key} apps={val} />
+          )}
+        </section>
       </div>
     );
   }

@@ -112,13 +112,10 @@
     width: fit-content;
     margin: 0 auto 3rem;
     font-size: 4em;
-    font-family: 'Playfair Display';
+    font-family: 'Oswald', sans-serif;
   }
 
-  #chart { 
-    position: relative; 
-    padding-left: .5em;
-  }
+  #chart { position: relative; }
 
   .app-counter {
     display: flex;
@@ -204,10 +201,11 @@
 footer { padding: 2em; }
 
 @media (max-width: 950px) {
+
+  // fix header padding
+
   #dashboard {
-    h2 {
-      font-size: 2em;
-    }
+    h2 { font-size: 2em; }
 
     .app-counter {
       .app-type { font-size: .75rem; }
@@ -240,18 +238,29 @@ footer { padding: 2em; }
 
 @media (max-width: 660px) {
   #dashboard {
-    .app-counter {
-      width: 38px;
+    main {
+      width: 100%;
 
-      .app-type { font-size: .5rem; }
-  
-      .app-count { font-size: 1.5rem; }
+      section {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
 
-      &.react,
-      &.express { left: -5%; }
-  
-      &.node,
-      &.mongo { right: -5%; }
+        .app-counter {
+          position: initial;
+          width: 38px;
+    
+          .app-type { font-size: .5rem; }
+      
+          .app-count { font-size: 1.5rem; }
+    
+          &.react,
+          &.express { left: -5%; }
+      
+          &.node,
+          &.mongo { right: -5%; }
+        }
+      }
     }
   }
 }
