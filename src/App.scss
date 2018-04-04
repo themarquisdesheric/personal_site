@@ -105,17 +105,20 @@
 
   main {
     width: 80%;
-    margin: 3em auto 3em;
+    margin: 3rem auto 3rem;
   }
   
   h2 {
     width: fit-content;
-    margin: 0 auto 3rem;
-    font-size: 4em;
+    margin: 0 auto;
+    font-size: 4rem;
     font-family: 'Oswald', sans-serif;
   }
 
-  #chart { position: relative; }
+  #chart { 
+    position: relative; 
+    margin: 3rem auto 0;
+  }
 
   .app-counter {
     display: flex;
@@ -201,11 +204,12 @@
 footer { padding: 2em; }
 
 @media (max-width: 950px) {
-
-  // fix header padding
-
   #dashboard {
-    h2 { font-size: 2em; }
+    main { margin: 2rem auto; }
+
+    h2 { font-size: 2.5em; }
+
+    #chart { margin-top: 2rem; }
 
     .app-counter {
       .app-type { font-size: .75rem; }
@@ -243,16 +247,12 @@ footer { padding: 2em; }
 
       section {
         display: flex;
-        justify-content: space-evenly;
+        justify-content: space-around;
         align-items: center;
+        margin-top: 1rem;
 
         .app-counter {
           position: initial;
-          width: 38px;
-    
-          .app-type { font-size: .5rem; }
-      
-          .app-count { font-size: 1.5rem; }
     
           &.react,
           &.express { left: -5%; }
@@ -262,5 +262,7 @@ footer { padding: 2em; }
         }
       }
     }
+
+    #chart { margin-top: 1.5rem; }
   }
 }
