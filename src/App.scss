@@ -115,7 +115,10 @@
     font-family: 'Playfair Display';
   }
 
-  #chart { position: relative; }
+  #chart { 
+    position: relative; 
+    padding-left: .5em;
+  }
 
   .app-counter {
     display: flex;
@@ -210,24 +213,9 @@ footer { padding: 2em; }
       .app-type { font-size: .75rem; }
   
       .app-count { font-size: 1.75rem; }
-    }
-  }
-}
-
-@media (max-width: 660px) {
-  #dashboard {
-    .app-counter {
-      width: 38px;
-
-      .app-type { font-size: .5rem; }
-  
-      .app-count { font-size: 1.5rem; }
 
       &.react,
-      &.express { left: -5%; }
-  
-      &.node,
-      &.mongo { right: -5%; }
+      &.node { top: 2%; }
     }
   }
 }
@@ -248,4 +236,22 @@ footer { padding: 2em; }
   }
 
   .icons { padding-bottom: 1em; }
+}
+
+@media (max-width: 660px) {
+  #dashboard {
+    .app-counter {
+      width: 38px;
+
+      .app-type { font-size: .5rem; }
+  
+      .app-count { font-size: 1.5rem; }
+
+      &.react,
+      &.express { left: -5%; }
+  
+      &.node,
+      &.mongo { right: -5%; }
+    }
+  }
 }
