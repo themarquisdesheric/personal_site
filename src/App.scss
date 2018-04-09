@@ -3,7 +3,7 @@
 @import "../node_modules/bulma/sass/utilities/derived-variables.sass";
 @import "../node_modules/bulma/bulma";
 @import "../node_modules/antd/lib/tooltip/style/index.css";
-  
+
 .has-vertical-center {
   display: flex;
   align-items: center;
@@ -127,7 +127,7 @@
     position: absolute;
 
     &.react,
-    &.node { top: 0 }
+    &.node { top: 12px }
 
     &.express,
     &.mongo { bottom: 0 }
@@ -217,7 +217,7 @@ footer { padding: 2em; }
       .app-count { font-size: 1.75rem; }
 
       &.react,
-      &.node { top: 2%; }
+      &.node { top: 15px; }
     }
   }
 }
@@ -228,8 +228,8 @@ footer { padding: 2em; }
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    
-    & .level-item {
+
+    .level-item {
       flex-basis: 150px;
       flex-shrink: 0;
       padding: 1em;

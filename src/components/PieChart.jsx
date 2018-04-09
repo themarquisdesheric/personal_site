@@ -9,8 +9,9 @@ class PieChart extends Component {
     const labels = [];
     const values = []; 
     
+    // set chart labels
     Object.entries(this.props.langTotals)
-      .forEach(([key, val]) => {
+      .forEach( ([key, val]) => {
         if (key === 'JavaScript') labels.push('JS');
         else labels.push(key);
 
@@ -19,6 +20,58 @@ class PieChart extends Component {
 
     Chart.defaults.global.defaultFontColor = '#000';
     Chart.defaults.global.defaultFontSize = 14;
+    
+    // lines 25 - 75 extend the legend so we can fine tune the styling
+    Chart.NewLegend = Chart.Legend.extend({
+      afterFit: function() {
+        // push the legend right
+        this.width = this.width + 20;
+      }
+    });
+    
+    const createNewLegendAndAttach = (chartInstance, legendOpts) => {
+      var legend = new Chart.NewLegend({
+        ctx: chartInstance.chart.ctx,
+        options: legendOpts,
+        chart: chartInstance
+      });
+      
+      if (chartInstance.legend) {
+        Chart.layoutService.removeBox(chartInstance, chartInstance.legend);
+        delete chartInstance.newLegend;
+      }
+      
+      chartInstance.newLegend = legend;
+      Chart.layoutService.addBox(chartInstance, legend);
+    };
+    
+    // Register the legend plugin
+    Chart.plugins.register({
+      beforeInit: (chartInstance) => {
+        var legendOpts = chartInstance.options.legend;
+    
+        if (legendOpts) createNewLegendAndAttach(chartInstance, legendOpts);
+      },
+      beforeUpdate: (chartInstance) => {
+        var legendOpts = chartInstance.options.legend;
+    
+        if (legendOpts) {
+          legendOpts = Chart.helpers.configMerge(Chart.defaults.global.legend, legendOpts);
+    
+          if (chartInstance.newLegend) chartInstance.newLegend.options = legendOpts;
+          else createNewLegendAndAttach(chartInstance, legendOpts);
+        } 
+        else {
+          Chart.layoutService.removeBox(chartInstance, chartInstance.newLegend);
+          delete chartInstance.newLegend;
+        }
+      },
+      afterEvent: (chartInstance, e) => {
+        var legend = chartInstance.newLegend;
+        
+        if (legend) legend.handleEvent(e);
+      }
+    });
 
     const options = {
       plugins: [
@@ -28,6 +81,11 @@ class PieChart extends Component {
         render: ({ label, value }) => 
           `${value}% ${label}`,
         fontStyle: 'bold'
+      },
+      legend: {
+        labels: {
+          padding: 20
+        }
       },
       animation: {
         animateRotate: true
@@ -65,7 +123,7 @@ class PieChart extends Component {
   setBackground = (screenX) => {
     if (screenX > 850) {
       return `url('github-large.png') no-repeat 50% ${this.calcBackgroundOffset(screenX)}`;
-    } else if (screenX > 700) {
+    } else if (screenX > 720) {
       return `url('github-small.png') no-repeat 50% ${this.calcBackgroundOffset(screenX)}`;
     } else return 'transparent';
   }
@@ -80,16 +138,16 @@ class PieChart extends Component {
     else if (screenX > 970) return 35;
     else if (screenX > 900) return 39;
     else if (screenX > 850) return 43;
-    else if (screenX > 768) return 24;
-    else if (screenX > 700) return 28;
+    else if (screenX > 800) return 24;
+    else if (screenX > 768) return 26;
+    else if (screenX > 720) return 28;
     else return 0;
   }
 
   calcBackgroundOffset = (screenX) => {
-    if (screenX > 1080) return '49.6%';
-    else if (screenX > 850) return '49%';
-    else if (screenX > 800) return '49.5%';
-    else return '49.2%';
+    if (screenX > 1080) return '49.9%';
+    else if (screenX > 850) return '49.9%';
+    else return '50.6%';
   }
 
   render () {
