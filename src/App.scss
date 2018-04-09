@@ -3,7 +3,7 @@
 @import "../node_modules/bulma/sass/utilities/derived-variables.sass";
 @import "../node_modules/bulma/bulma";
 @import "../node_modules/antd/lib/tooltip/style/index.css";
-  
+
 .has-vertical-center {
   display: flex;
   align-items: center;
@@ -105,19 +105,19 @@
 
   main {
     width: 80%;
-    margin: 3em auto 3em;
+    margin: 3rem auto 3rem;
   }
   
   h2 {
     width: fit-content;
-    margin: 0 auto 3rem;
-    font-size: 4em;
-    font-family: 'Playfair Display';
+    margin: 0 auto;
+    font-size: 4rem;
+    font-family: 'Oswald', sans-serif;
   }
 
   #chart { 
     position: relative; 
-    padding-left: .5em;
+    margin: 3rem auto 0;
   }
 
   .app-counter {
@@ -127,7 +127,7 @@
     position: absolute;
 
     &.react,
-    &.node { top: 0 }
+    &.node { top: 12px }
 
     &.express,
     &.mongo { bottom: 0 }
@@ -205,9 +205,11 @@ footer { padding: 2em; }
 
 @media (max-width: 950px) {
   #dashboard {
-    h2 {
-      font-size: 2em;
-    }
+    main { margin: 2rem auto; }
+
+    h2 { font-size: 2.5em; }
+
+    #chart { margin-top: 2rem; }
 
     .app-counter {
       .app-type { font-size: .75rem; }
@@ -215,7 +217,7 @@ footer { padding: 2em; }
       .app-count { font-size: 1.75rem; }
 
       &.react,
-      &.node { top: 2%; }
+      &.node { top: 15px; }
     }
   }
 }
@@ -226,8 +228,8 @@ footer { padding: 2em; }
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    
-    & .level-item {
+
+    .level-item {
       flex-basis: 150px;
       flex-shrink: 0;
       padding: 1em;
@@ -240,18 +242,27 @@ footer { padding: 2em; }
 
 @media (max-width: 660px) {
   #dashboard {
-    .app-counter {
-      width: 38px;
+    main {
+      width: 100%;
 
-      .app-type { font-size: .5rem; }
-  
-      .app-count { font-size: 1.5rem; }
+      section {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin-top: 1rem;
 
-      &.react,
-      &.express { left: -5%; }
-  
-      &.node,
-      &.mongo { right: -5%; }
+        .app-counter {
+          position: initial;
+    
+          &.react,
+          &.express { left: -5%; }
+      
+          &.node,
+          &.mongo { right: -5%; }
+        }
+      }
     }
+
+    #chart { margin-top: 1.5rem; }
   }
 }
