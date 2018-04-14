@@ -115,11 +115,11 @@ class Dashboard extends Component {
           <header>
             <h2 className="title">Github Dashboard</h2>
           </header>
-        
+      
           {langPercentages 
             ? <PieChart langTotals={langPercentages} stats={stats} /> 
-            : <div id="chart-spinner">
-                <GridLoader loading={true} color={'rgba(53, 222, 113, 1)'} />
+            : <div id="chart-loader">
+                <GridLoader loading={!langPercentages} color={'rgba(53, 222, 113, 1)'} />
               </div>  
           }
         </main>
