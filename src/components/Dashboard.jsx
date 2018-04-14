@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Waypoint from 'react-waypoint';
 import { GridLoader } from 'react-spinners';
 import fetch from 'isomorphic-fetch';
 import { calcLangTotals, calcRepoTotal, calcLangPercentages } from '../utilities';
@@ -8,6 +9,7 @@ import PieChart from './PieChart';
 class Dashboard extends Component {
   state = {
     langPercentages: null,
+    inView: false,
     stats: {
       mongo: 0,
       node: 0,
@@ -20,7 +22,7 @@ class Dashboard extends Component {
     const headers = new Headers({
       Authorization: `token ${process.env.REACT_APP_GITHUB_KEY}`,
     });
-
+    
     const store = JSON.parse(sessionStorage.getItem('store'));
 
     if (store) this.setState({ ...store });
@@ -108,16 +110,19 @@ class Dashboard extends Component {
   }
 
   render() {
-    const { langPercentages, stats } = this.state;
+    const { langPercentages, inView, stats } = this.state;
+
     return (
       <article id="dashboard">
         <main>
+          <Waypoint onEnter={() => this.setState({ inView: true })} />
+      
           <header>
             <h2 className="title">Github Dashboard</h2>
           </header>
       
-          {langPercentages 
-            ? <PieChart langTotals={langPercentages} stats={stats} /> 
+          {langPercentages && inView
+            ? <PieChart langTotals={langPercentages} inView={inView} stats={stats} /> 
             : <div id="chart-loader">
                 <GridLoader loading={!langPercentages} color={'rgba(53, 222, 113, 1)'} />
               </div>  

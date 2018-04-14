@@ -154,6 +154,7 @@ class PieChart extends Component {
   render () {
     const { stats } = this.props;
 
+    
     return (
       <div id="chart">
         <canvas 
