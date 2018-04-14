@@ -25,13 +25,10 @@ class Dashboard extends Component {
     
     fetch('https://api.github.com/users/themarquisdesheric/repos?per_page=100', { headers })
       .then(res => res.json())
-      .then(repos => {
-        console.log(repos);
-
+      .then(repos => 
         repos.filter(repo => 
         repo.owner.login === 'themarquisdesheric' && 
-        repo.name !== 'incubator-datafu')
-      })
+        repo.name !== 'incubator-datafu'))
       .then(repos => {
         const langTotals = {
           total: 0
@@ -102,7 +99,7 @@ class Dashboard extends Component {
       .catch(err => {
         this.setState({ error: true });
 
-        console.error('whoops!', err);
+        console.log('error! hiding github dashboard', err);
       });
   }
 
