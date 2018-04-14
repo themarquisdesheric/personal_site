@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Chart from 'chart.js';
 import pieceLabel from 'chart.piecelabel.js';
+import { GridLoader } from 'react-spinners';
 import AppCounter from './AppCounter';
 
 class PieChart extends Component {
@@ -163,9 +164,17 @@ class PieChart extends Component {
         />        
         
         <section>
-          {stats.node && Object.entries(stats).map( ([key, val]) => 
-            <AppCounter key={key} type={key} apps={val} />
-          )}
+          {stats.node
+            ? Object.entries(stats).map( ([key, val]) => 
+                <AppCounter key={key} type={key} apps={val} />
+              )
+            // loading spinners for stats
+            : Object.keys(stats).map(stat => 
+                <div key={stat} className={`app-counter ${stat}`}>
+                  <GridLoader loading={!stats.node} color={'rgba(53, 222, 113, 1)'} />
+                </div>
+              )
+          }
         </section>
       </div>
     );

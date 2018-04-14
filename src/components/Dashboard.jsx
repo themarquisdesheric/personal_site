@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { GridLoader } from 'react-spinners';
 import fetch from 'isomorphic-fetch';
 import { calcLangTotals, calcRepoTotal, calcLangPercentages } from '../utilities';
 import PieChart from './PieChart';
@@ -114,8 +115,13 @@ class Dashboard extends Component {
           <header>
             <h2 className="title">Github Dashboard</h2>
           </header>
-        
-          {langPercentages && <PieChart langTotals={langPercentages} stats={stats} />}
+      
+          {langPercentages 
+            ? <PieChart langTotals={langPercentages} stats={stats} /> 
+            : <div id="chart-loader">
+                <GridLoader loading={!langPercentages} color={'rgba(53, 222, 113, 1)'} />
+              </div>  
+          }
         </main>
       </article>
     );

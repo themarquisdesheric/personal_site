@@ -14,7 +14,8 @@
   "plugins": [
       "react",
       "jsx-a11y",
-      "import"
+      "import",
+      "emotion"
   ],
   "rules": {
       "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
