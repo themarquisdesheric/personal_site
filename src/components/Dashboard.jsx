@@ -14,7 +14,8 @@ class Dashboard extends Component {
       node: 0,
       express: 0,
       react: 0
-    }
+    },
+    error: false
   }
 
   componentDidMount() {
@@ -24,9 +25,13 @@ class Dashboard extends Component {
     
     fetch('https://api.github.com/users/themarquisdesheric/repos?per_page=100', { headers })
       .then(res => res.json())
-      .then(repos => repos.filter(repo => 
+      .then(repos => {
+        console.log(repos);
+
+        repos.filter(repo => 
         repo.owner.login === 'themarquisdesheric' && 
-        repo.name !== 'incubator-datafu'))
+        repo.name !== 'incubator-datafu')
+      })
       .then(repos => {
         const langTotals = {
           total: 0
@@ -44,7 +49,7 @@ class Dashboard extends Component {
   
               return repo;
             }));
-
+          
         Promise.all(promises)
           .then(repos => {
             const langPercentages = calcLangPercentages(langTotals);
@@ -92,32 +97,36 @@ class Dashboard extends Component {
                   this.setState({ stats });
                 });
             });
-          })
-          .catch(err => console.error('whoops!', err));
+          });
+      })
+      .catch(err => {
+        this.setState({ error: true });
+
+        console.error('whoops!', err);
       });
   }
 
   render() {
-    const { langPercentages, inView, stats } = this.state;
+    const { langPercentages, inView, stats, error } = this.state;
 
-    return (
-      <article id="dashboard">
-        <main>
-          <Waypoint onEnter={() => this.setState({ inView: true })} />
-      
-          <header>
-            <h2 className="title">Github Dashboard</h2>
-          </header>
-      
-          {langPercentages && inView
-            ? <PieChart langTotals={langPercentages} inView={inView} stats={stats} /> 
-            : <div id="chart-loader">
-                <GridLoader loading={!langPercentages} color={'rgba(53, 222, 113, 1)'} />
-              </div>  
-          }
-        </main>
-      </article>
-    );
+    return error 
+      ? null
+      : <article id="dashboard">
+          <main>
+            <Waypoint onEnter={() => this.setState({ inView: true })} />
+        
+            <header>
+              <h2 className="title">Github Dashboard</h2>
+            </header>
+        
+            {langPercentages && inView
+              ? <PieChart langTotals={langPercentages} inView={inView} stats={stats} /> 
+              : <div id="chart-loader">
+                  <GridLoader loading={!langPercentages} color={'rgba(53, 222, 113, 1)'} />
+                </div>  
+            }
+          </main>
+        </article>
   }
 }
 
