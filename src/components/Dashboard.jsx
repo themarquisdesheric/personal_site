@@ -99,10 +99,10 @@ class Dashboard extends Component {
       .catch(err => {
         this.setState({ error: true });
 
-        console.log('error! hiding github dashboard', err);
+        console.log('Something went wrong... hiding github dashboard');
       });
   }
-
+  
   render() {
     const { langPercentages, inView, stats, error } = this.state;
 

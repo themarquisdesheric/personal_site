@@ -5,7 +5,7 @@ const Footer = () => (
     <div className="container">
       <div className="content has-text-centered has-text-light">
         <p>
-          &copy; <span className="normal-text">yuval allweil</span> 2017
+          &copy; <span className="normal-text">yuval allweil</span> 2018
         </p>
       </div>
     </div>
