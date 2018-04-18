@@ -6,7 +6,7 @@ import Hero from '../components/Hero';
 import ContactText from './textContainers/Contact';
 
 const Contact = () => (
-  <div>
+  <div className="contact">
     <Block>
       <Columns>
         <TextColumn>
