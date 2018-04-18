@@ -15,7 +15,7 @@ class Icon extends PureComponent {
         <div 
           className="contact-icon" 
           ref={icon => this.icon = icon}
-          style={{ transition: `600ms ${i * 400}ms cubic-bezier(0.175, 0.885, 0.32, 1.275)`}}
+          style={{ transition: `600ms ${i * 350}ms cubic-bezier(0.175, 0.885, 0.32, 1.275)`}}
         >
           <Tooltip 
             title={text} 
