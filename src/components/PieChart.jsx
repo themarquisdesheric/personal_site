@@ -106,7 +106,7 @@ class PieChart extends Component {
       data: {
         labels,
         datasets: [{
-          backgroundColor: ['rgba(53, 222, 113, 1)', 'rgba(171, 102, 255, 1)', 'rgba(70, 124, 255, 1)'],
+          backgroundColor: ['rgb(53, 222, 113)', 'rgb(171, 102, 255)', 'rgb(70, 124, 255)'],
           data: values,
           borderColor: 'black',
           borderWidth: 2
@@ -171,7 +171,7 @@ class PieChart extends Component {
             // loading spinners for stats
             : Object.keys(stats).map(stat => 
                 <div key={stat} className={`app-counter ${stat}`}>
-                  <GridLoader loading={!stats.node} color={'rgba(53, 222, 113, 1)'} />
+                  <GridLoader loading={!stats.node} color={'rgb(53, 222, 113)'} />
                 </div>
               )
           }

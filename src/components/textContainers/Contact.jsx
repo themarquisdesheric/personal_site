@@ -5,11 +5,6 @@ import 'font-awesome/css/font-awesome.css';
 const Contact = () => {
   const icons = [
     {
-      href: 'mailto:themarquisdesheric@gmail.com', 
-      classes: 'fa fa-envelope-o',
-      text: 'themarquisdesheric@gmail.com'
-    },
-    {
       href: '/YuvalAllweilResume.pdf',
       target: '_blank', 
       classes: 'fa fa-file-text-o',
@@ -19,6 +14,11 @@ const Contact = () => {
       href: 'https://www.linkedin.com/in/yuval-allweil/',
       classes: 'fa fa-linkedin-square linkedin',
       text: 'LinkedIn'
+    },
+    {
+      href: 'mailto:themarquisdesheric@gmail.com', 
+      classes: 'fa fa-envelope-o',
+      text: 'themarquisdesheric@gmail.com'
     },
     {
       href: 'https://github.com/themarquisdesheric', 
