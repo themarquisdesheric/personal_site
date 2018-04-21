@@ -174,7 +174,7 @@
 .normal-text { font-weight: 900; }
 
 .contact {
-  background: linear-gradient(to bottom, white 0%, #ebedee 100%);
+  background: url('./notepad.jpg') top right;
 
   #contact-heading { 
     font-size: 3em; 
@@ -209,7 +209,6 @@
     .fa-linkedin-square { color: $blue; }
   }
 }
-
 
 .border { border-top: 2px solid $dark; }
 
@@ -251,7 +250,7 @@ footer { padding: 2em; }
       padding: 1em;
       margin-bottom: 0;
     }
-  }
+  } 
 }
 
 @media (max-width: 660px) {
@@ -279,4 +278,6 @@ footer { padding: 2em; }
 
     #chart { margin-top: 1.5rem; }
   }
+
+  .contact { background: none; }
 }
