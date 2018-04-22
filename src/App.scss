@@ -4,6 +4,8 @@
 @import "../node_modules/bulma/bulma";
 @import "../node_modules/antd/lib/tooltip/style/index.css";
 
+* { box-sizing: border-box; }
+
 .has-vertical-center {
   display: flex;
   align-items: center;

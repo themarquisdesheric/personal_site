@@ -1,6 +1,6 @@
 import React from 'react';
 import data from './data/content.json';
-import ComposeImageRow from './components/ComposeImageRow';
+import ComposeImageRows from './components/ComposeImageRows';
 import ComposeInfoRow from './components/ComposeInfoRow';
 import Bio from './components/Bio';
 import Level from './components/Level';
@@ -16,10 +16,7 @@ import './App.css';
 
 const App = () => (
   <main>
-    {data.images.map( (row, i) => 
-      <ComposeImageRow {...row} darkSide={i} key={row.src} />
-    )}
-    
+    <ComposeImageRows content={data.images} />
     <Bio />
     <Level />
     
@@ -34,7 +31,7 @@ const App = () => (
       );
     })}
 
-    <Dashboard />
+    {/* <Dashboard /> */}
     <Contact />
     <Footer />
   </main>
