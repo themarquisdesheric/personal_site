@@ -8,8 +8,8 @@ class ImageRow extends PureComponent {
 
     return (
       <Fragment>
-        <section className={`text-content ${index % 2 === 0 ? 'dark-background' : null}`}>
-          <div className="text-wrapper">
+        <section className={`text-content ${index % 2 === 0 ? 'dark-background' : ''}`}>
+          <div>
             <h2 className="small-text">
               {smallText}
             </h2>
@@ -18,8 +18,8 @@ class ImageRow extends PureComponent {
               {largeText}
             </h2>
           </div>
-        </section> 
-
+        </section>
+        
         <figure className="poster">
           <img src={src} alt={src.slice(0, -4)} />
         </figure>
@@ -27,20 +27,6 @@ class ImageRow extends PureComponent {
     );
   }
 }
-
-class ComposeImageRows extends PureComponent {
-  render() {
-    const { content } = this.props;
-
-    return (
-      <div className="grid-container">
-        {content.map( (row, index) => 
-          <ImageRow key={row.src} row={row} index={index} />
-        )}
-      </div>
-    );
-  }
-} 
 
 ImageRow.propTypes = {
   row: PropTypes.shape({
@@ -50,5 +36,23 @@ ImageRow.propTypes = {
   }),
   index: PropTypes.number.isRequired
 };
+
+class ComposeImageRows extends PureComponent {
+  render() {
+    const { content } = this.props;
+
+    return (
+      <div className="image-rows">
+        {content.map( (row, index) => 
+          <ImageRow key={row.src} row={row} index={index} />
+        )}
+      </div>
+    );
+  }
+} 
+
+ComposeImageRows.propTypes = {
+  content: PropTypes.arrayOf(PropTypes.object).isRequired
+}
 
 export default ComposeImageRows;

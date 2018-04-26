@@ -4,7 +4,60 @@
 @import "../node_modules/bulma/bulma";
 @import "../node_modules/antd/lib/tooltip/style/index.css";
 
-* { box-sizing: border-box; }
+$white: #f5f5f5;
+$dark: #363636;
+
+body { 
+  box-sizing: border-box; 
+  color: $dark;
+  line-height: 1.5;
+}
+
+.dark-background { 
+  background: #000;
+  background-image: linear-gradient(141deg, black 0%, #0a0a0a 71%, #181616 100%);
+  color: $white; 
+}
+
+.image-rows {
+  > * { min-height: 55vh; }
+
+  .text-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 3rem 1.5rem;
+  }
+
+  .small-text,
+  .large-text { 
+    font-family: 'Playfair Display', serif; 
+    line-height: 1.125;
+  }
+
+  .small-text {
+    margin-bottom: .5em;
+    font-size: 1.25rem;
+    font-style: italic;
+  }
+
+  .large-text { font-size: 3rem; }
+
+  .poster { margin-bottom: -6px; }
+}
+
+@media (min-width: 768px) {
+  .image-rows {
+    display: grid;
+  }
+}
+
+
+
+// OLD CODE BELOW -- REWRITE! 
+
+
 
 .has-vertical-center {
   display: flex;
@@ -53,11 +106,6 @@
   }
 
   .has-text-light a:hover { color: $white; }
-}
-
-.dark-background {
-  background: #000;
-  background-image: linear-gradient(141deg, black 0%, #0a0a0a 71%, #181616 100%);
 }
 
 .content, 
