@@ -32,7 +32,7 @@ class Bio extends Component {
                       </Waypoint>
                       
                       <p>
-                        {"Yuval Allweil is an autodidact whose curiosity knows no bounds. This curiosity has taken him to the other side of the world, and not just once or twice. It has inspired him to pore over the words of the dead in the hopes of unlocking the secrets of tomorrow, and to engage with the living for the same end. This unbridled passion has led him directly into the laboratories of some of today's most brilliant scientists, so their work could be distilled for a more popular audience."}
+                        {"Yuval Allweil is an autodidact whose curiosity knows no bounds. This curiosity has taken him to the other side of the world, and not just once or twice. This unbridled passion has led him directly into the laboratories of some of today's most brilliant scientists, to distill their work for a more popular audience."}
                       </p>
                       <p>
                         His interviews with visionary thinkers like Judea Pearl and Nir Eyal have headlined Specimen Magazine, and his short fiction has been published in several anthologies. 
@@ -41,11 +41,8 @@ class Bio extends Component {
                         He has served on the management teams of several startups, from a record-breaking e-commerce outfit to a nationally-acclaimed science magazine.
                       </p>
                       <p>
-                        {"Yuval's passion is in frontend development, and his favorite task is to bring a wireframe to pixel-perfect and responsive life. Whether it's React or vanilla JavaScript, you can be sure Yuval is having fun with it."} 
-                      </p>
-                      <p>
-                        {"He loves helping others, and firmly believes that you won't get ahead without helping those around you. "}
-                        He is a dedicated teacher whose training programs and workshops have been professionally recognized, and is currently at&nbsp;
+                        {"Yuval loves helping others, and firmly believes that you won't get ahead without helping those around you. "}
+                        He is a dedicated teacher whose training programs and workshops have been professionally recognized, and was most recently a Teaching Assistant at&nbsp;
                         <a 
                           href="http://alchemycodelab.com"
                           target="_blank"
@@ -53,7 +50,13 @@ class Bio extends Component {
                         >
                           Alchemy Code Lab
                         </a>
-                        , where he is helping students learn web development using the following technologies:
+                        , Portland's premier coding bootcamp. In his free time, he tutors students in all aspects of software development. 
+                      </p>
+                      <p>
+                        {"Yuval's passion is front end development, and his favorite task is to bring a wireframe to pixel-perfect and responsive life. Whether it's React or vanilla JavaScript, you can be sure Yuval is having fun with it."} 
+                      </p>
+                      <p>
+                        He is currently a freelance front end developer, and is spending the majority of his time building a video-based review app for a startup in stealth mode, along with design work for other clients. 
                       </p>
                     </div>
                   </section>
