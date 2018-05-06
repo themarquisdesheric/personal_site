@@ -4,6 +4,15 @@ import Tooltip from 'antd/lib/tooltip';
 import Waypoint from 'react-waypoint';
 
 class Icon extends PureComponent {
+  handleAnalyticsEvent = () => {
+    const { text } = this.props;
+
+    window.gtag('event', 'click', {
+      'event_category': 'Link clicked',
+      'event_label': text
+    });
+  }
+
   render() {
     const { href, classes, text, i } = this.props;
 
@@ -26,6 +35,7 @@ class Icon extends PureComponent {
               href={href}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={this.handleAnalyticsEvent}
             >
               <i className={classes} aria-hidden="true" />  
             </a>
