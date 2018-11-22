@@ -35,28 +35,17 @@ class Bio extends Component {
                         {"Yuval Allweil is an autodidact whose curiosity knows no bounds. This curiosity has taken him to the other side of the world, and not just once or twice. This unbridled passion has led him directly into the laboratories of some of today's most brilliant scientists, to distill their work for a more popular audience."}
                       </p>
                       <p>
-                        His interviews with visionary thinkers like Judea Pearl and Nir Eyal have headlined Specimen Magazine, and his short fiction has been published in several anthologies. 
+                        His interviews with visionary thinkers like Dr. Judea Pearl and Nir Eyal have headlined Specimen Magazine, and his short fiction has been published in several anthologies. 
                       </p>
                       <p>
                         He has served on the management teams of several startups, from a record-breaking e-commerce outfit to a nationally-acclaimed science magazine.
                       </p>
                       <p>
                         {"Yuval loves helping others, and firmly believes that you won't get ahead without helping those around you. "}
-                        He is a dedicated teacher whose training programs and workshops have been professionally recognized, and was most recently a Teaching Assistant at&nbsp;
-                        <a 
-                          href="http://alchemycodelab.com"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          Alchemy Code Lab
-                        </a>
-                        , Portland's premier coding bootcamp. In his free time, he tutors students in all aspects of software development. 
+                        He is a dedicated teacher whose training programs and workshops have been professionally recognized, and continues to tutor students in all aspects of software development. 
                       </p>
                       <p>
-                        {"Yuval's passion is front end development, and his favorite task is to bring a wireframe to pixel-perfect and responsive life. Whether it's React or vanilla JavaScript, you can be sure Yuval is having fun with it."} 
-                      </p>
-                      <p>
-                        He is currently a freelance front end developer, and is spending the majority of his time building a video-based review app for a startup in stealth mode, along with design work for other clients. 
+                        Yuval is currently a front end developer for <a href="https://www.kroger.com/">Kroger</a>. Check out Alchemy Code Lab's <a href="https://www.alchemycodelab.com/blog/alchemist-yuval-allweil">interview</a> with him to see why he loves what he does.   
                       </p>
                     </div>
                   </section>
