@@ -106,7 +106,7 @@ class PieChart extends Component {
       data: {
         labels,
         datasets: [{
-          backgroundColor: ['rgb(53, 222, 113)', 'rgb(171, 102, 255)', 'rgb(70, 124, 255)'],
+          backgroundColor: ['rgb(53, 222, 113)', 'rgb(171, 102, 255)', 'rgb(70, 124, 255)', 'rgb(255, 206, 10)', 'rgb(255, 10, 214)'],
           data: values,
           borderColor: 'black',
           borderWidth: 2
