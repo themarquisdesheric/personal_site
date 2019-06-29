@@ -4,6 +4,11 @@
 @import "../node_modules/bulma/bulma";
 @import "../node_modules/antd/lib/tooltip/style/index.css";
 
+.wrapper {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
 .has-vertical-center {
   display: flex;
   align-items: center;
@@ -282,4 +287,11 @@ footer { padding: 2em; }
   }
 
   .contact { background: none; }
+}
+
+@media (min-width: 1441px) {
+  .wrapper {
+    border-left: 1px solid $black;
+    border-right: 1px solid $black;
+  }
 }

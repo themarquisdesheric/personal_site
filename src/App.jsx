@@ -15,7 +15,7 @@ import Footer from './components/Footer';
 import './App.css'; 
 
 const App = () => (
-  <main>
+  <main className="wrapper">
     {data.images.map( (row, i) => 
       <ComposeImageRow {...row} darkSide={i} key={row.src} />
     )}
