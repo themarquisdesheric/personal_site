@@ -4,7 +4,6 @@ import ComposeImageRow from './components/ComposeImageRow';
 import ComposeInfoRow from './components/ComposeInfoRow';
 import Bio from './components/Bio';
 import Level from './components/Level';
-import Dashboard from './components/Dashboard';
 import Apache from './components/textContainers/Apache';
 import Drumkit from './components/textContainers/Drumkit';
 import Bookify from './components/textContainers/Bookify';
@@ -34,7 +33,11 @@ const App = () => (
       );
     })}
 
-    <Dashboard />
+    
+    {/* 
+      need to fix Dashboard, Svelte weighed the whole thing towards HTML and the API must have changed because it's broken now
+      <Dashboard /> 
+    */}
     <Contact />
     <Footer />
   </main>
