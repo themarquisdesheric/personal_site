@@ -139,7 +139,7 @@
     position: absolute;
 
     &.react,
-    &.node { top: 12px }
+    &.svelte { top: 12px }
 
     &.express,
     &.mongo { bottom: 0 }
@@ -147,7 +147,7 @@
     &.react,
     &.express { left: 0; }
 
-    &.node,
+    &.svelte,
     &.mongo { right: 0; }
 
     .app-type {
@@ -238,7 +238,7 @@ footer { padding: 2em; }
       .app-count { font-size: 1.75rem; }
 
       &.react,
-      &.node { top: 15px; }
+      &.svelte { top: 15px; }
     }
   }
 
@@ -278,7 +278,7 @@ footer { padding: 2em; }
           &.react,
           &.express { left: -5%; }
       
-          &.node,
+          &.svelte,
           &.mongo { right: -5%; }
         }
       }

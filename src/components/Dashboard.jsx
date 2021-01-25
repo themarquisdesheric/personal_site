@@ -11,7 +11,7 @@ class Dashboard extends Component {
     inView: false,
     stats: {
       mongo: 0,
-      node: 0,
+      svelte: 0,
       express: 0,
       react: 0
     },
@@ -25,19 +25,25 @@ class Dashboard extends Component {
     
     fetch('https://api.github.com/users/themarquisdesheric/repos?per_page=100', { headers })
       .then(res => res.json())
-      .then(repos => 
-        repos.filter(repo => 
-        repo.owner.login === 'themarquisdesheric' && 
-        repo.name !== 'incubator-datafu'))
       .then(repos => {
         const langTotals = {
           total: 0
         };
+        
+        repos = repos.filter(repo => 
+          repo.owner.login === 'themarquisdesheric' && 
+          repo.name !== 'incubator-datafu'
+        )
         // get language statistics for each repo
         const promises = repos.map(repo => 
           fetch(repo.languages_url, { headers })
             .then(res => res.json())
             .then(repoStats => {
+              delete repoStats.HTML
+              delete repoStats.CSS
+              delete repoStats.SCSS
+              delete repoStats.Svelte
+              
               calcLangTotals(repoStats, langTotals);
               
               const repoTotal = calcRepoTotal(repoStats);
@@ -55,24 +61,31 @@ class Dashboard extends Component {
             this.setState({ langPercentages }, () => {
               const promises = repos.map(repo =>
                 // fetch content tree for each repo
-                fetch(`https://api.github.com/repos/themarquisdesheric/${repo.name}/git/trees/master?recursive=1`
-                  , { headers })
+                fetch(
+                  `https://api.github.com/repos/themarquisdesheric/${repo.name}/git/trees/master?recursive=1`,
+                  { headers }
+                )
                   .then(res => res.json())
                   .then(res => {
+                    if (!res.tree) return repo
+
                     const packageJSONIndex = res.tree.findIndex(item => item.path.includes('package.json'));
       
                     if (packageJSONIndex > -1) {
-                      repo.node = true;
                       // fetch package.json
                       return fetch(res.tree[packageJSONIndex].url, { headers })
                         .then(res => res.json())
-                        .then(encoded => {
-                          // convert from base64 encoding, then stringify to search for keywords
-                          const packageJSON = JSON.stringify(window.atob(encoded.content));
-      
-                          if (packageJSON.includes('mongo')) repo.mongo = true;
-                          if (packageJSON.includes('express')) repo.express = true;
-                          if (packageJSON.includes('react')) repo.react = true;
+                        .then(encodedPackageJSON => {
+                          // convert package.json from base64 encoding, then  search for keywords
+                          const { dependencies = {}, devDependencies = {} } = JSON.parse(window.atob(encodedPackageJSON.content));
+                          
+                          if (dependencies['mongodb'] || dependencies['mongoose']) repo.mongo = true;
+                          if (dependencies['express']) repo.express = true;
+                          if (dependencies['react']) repo.react = true;
+                          if (devDependencies['svelte']) {
+                            repo.svelte = true;
+                            console.log(repo)
+                          }
       
                           return repo;
                         });
@@ -84,9 +97,9 @@ class Dashboard extends Component {
                 .then(projects => {
                   const stats = projects.reduce( (totals, project) => {
                     if (project.mongo) totals.mongo++;
-                    if (project.node) totals.node++;
                     if (project.express) totals.express++;
                     if (project.react) totals.react++;
+                    if (project.svelte) totals.svelte++;
                     
                     return totals;
                   }, { ...this.state.stats });

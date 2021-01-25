@@ -164,14 +164,14 @@ class PieChart extends Component {
         />        
         
         <section>
-          {stats.node
+          {stats.react
             ? Object.entries(stats).map( ([key, val]) => 
                 <AppCounter key={key} type={key} apps={val} />
               )
             // loading spinners for stats
             : Object.keys(stats).map(stat => 
                 <div key={stat} className={`app-counter ${stat}`}>
-                  <GridLoader loading={!stats.node} color={'rgb(53, 222, 113)'} />
+                  <GridLoader loading={!stats.react} color={'rgb(53, 222, 113)'} />
                 </div>
               )
           }
@@ -188,7 +188,7 @@ PieChart.propTypes = {
     JavaScript: PropTypes.number
   }).isRequired,
   stats: PropTypes.shape({
-    node: PropTypes.number.isRequired,
+    svelte: PropTypes.number.isRequired,
     mongo: PropTypes.number.isRequired,
     express: PropTypes.number.isRequired,
     react: PropTypes.number.isRequired
