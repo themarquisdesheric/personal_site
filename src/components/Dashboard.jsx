@@ -59,10 +59,14 @@ class Dashboard extends Component {
 
             // set state to render pie chart, then fetch stack stats
             this.setState({ langPercentages }, () => {
-              const promises = repos.map(repo =>
+              const promises = repos.map(repo => {
+                const branch = Number(repo.created_at.slice(0,4)) >= 2021 ||
+                  repo.name === 'specimen-magazine'
+                    ? 'main'
+                    : 'master';
                 // fetch content tree for each repo
-                fetch(
-                  `https://api.github.com/repos/themarquisdesheric/${repo.name}/git/trees/master?recursive=1`,
+                return fetch(
+                  `https://api.github.com/repos/themarquisdesheric/${repo.name}/git/trees/${branch}?recursive=1`,
                   { headers }
                 )
                   .then(res => res.json())
@@ -91,7 +95,8 @@ class Dashboard extends Component {
                         });
                     } 
                     else return repo;
-                  }));
+                  })
+              });
               
               Promise.all(promises)
                 .then(projects => {
