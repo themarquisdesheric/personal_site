@@ -86,10 +86,7 @@ class Dashboard extends Component {
                           if (dependencies['mongodb'] || dependencies['mongoose']) repo.mongo = true;
                           if (dependencies['express']) repo.express = true;
                           if (dependencies['react']) repo.react = true;
-                          if (devDependencies['svelte']) {
-                            repo.svelte = true;
-                            console.log(repo)
-                          }
+                          if (devDependencies['svelte']) repo.svelte = true;
       
                           return repo;
                         });
