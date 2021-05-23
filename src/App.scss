@@ -132,6 +132,22 @@
     margin: 3rem auto 0;
   }
 
+  .logo-wrapper {
+    position: relative;
+
+    img {
+      position: absolute;
+      top: calc(50% - 30px);
+      left: calc(50% - 30px);
+      width: 60px;
+      background: white;
+      border-radius: 50%;
+      // github logo has weird white artifact on top, so trim it off
+      clip-path: circle(29px);
+      display: none;
+    }
+  }
+
   .app-counter {
     display: flex;
     flex-direction: column;
@@ -223,6 +239,12 @@
 .border-light { border-top: 2px solid $light; }
 
 footer { padding: 2em; }
+
+@media (min-width: 496px) {
+  #dashboard .logo-wrapper img {
+    display: block;
+  }
+}
 
 @media (max-width: 950px) {
   #dashboard {
