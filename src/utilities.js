@@ -25,3 +25,15 @@ export const calcLangPercentages = (obj) => {
     }, {});
 };
 
+export const sortLanguagePercentages = (languagePercentages) => {
+  // convert to array to sort
+  const sortedLanguagePercentages = Object.entries(languagePercentages).sort(
+    (a, b) =>
+      b[1] - a[1]
+  );
+  // reconstitute object in order
+  return sortedLanguagePercentages.reduce((accumulator, current) => ({
+    ...accumulator,
+    [current[0]]: current[1],
+  }), {});
+};
