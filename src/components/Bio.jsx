@@ -45,7 +45,7 @@ class Bio extends Component {
                         He is a dedicated teacher whose training programs and workshops have been professionally recognized, and continues to tutor students in all aspects of software development. 
                       </p>
                       <p>
-                        Yuval is currently a front end developer for <a href="https://www.kroger.com/">Kroger</a>. Check out Alchemy Code Lab's <a href="https://www.alchemycodelab.com/blog/alchemist-yuval-allweil">interview</a> with him to see why he loves what he does.   
+                        Yuval is currently a Technical Lead and Senior Front End Developer for <a href="https://www.kroger.com/">Kroger</a>. Check out Alchemy Code Lab's <a href="https://www.alchemycodelab.com/blog/alchemist-yuval-allweil">interview</a> with him to see why he loves what he does.   
                       </p>
                     </div>
                   </section>
