@@ -35,7 +35,7 @@ class PieChart extends Component {
       data: {
         labels: languages,
         datasets: [{
-          backgroundColor: ['rgb(53, 222, 113)', 'rgb(171, 102, 255)', 'rgb(70, 124, 255)', 'rgb(255, 206, 10)', 'rgb(255, 10, 214)'],
+          backgroundColor: ['rgb(70, 124, 255)', 'rgb(171, 102, 255)', 'rgb(255, 10, 214)', 'rgb(53, 222, 113)', 'rgb(255, 206, 10)'], 
           data: numericalDataInDescendingOrder,
           borderColor: 'black',
           borderWidth: 2
@@ -68,7 +68,7 @@ class PieChart extends Component {
             // loading spinners for stats
             : Object.keys(stats).map(stat => 
                 <div key={stat} className={`app-counter ${stat}`}>
-                  <GridLoader loading={!stats.react} color={'rgb(53, 222, 113)'} />
+                  <GridLoader loading={!stats.react} color="rgb(171, 102, 255)" />
                 </div>
               )
           }

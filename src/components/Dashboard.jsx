@@ -134,7 +134,7 @@ class Dashboard extends Component {
             {langPercentages && inView
               ? <PieChart langTotals={langPercentages} inView={inView} stats={stats} /> 
               : <div id="chart-loader">
-                  <GridLoader loading={!langPercentages} color={'rgba(53, 222, 113, 1)'} />
+                  <GridLoader loading={!langPercentages} color="rgb(70, 124, 255)" />
                 </div>  
             }
           </main>
