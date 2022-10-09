@@ -68,7 +68,7 @@ describe('github dashboard', () => {
     expect(repo).toEqual(expectedResult);
   });
 
-  it('should sort the languages by highest percentage', () => {
+  it('should sort languages and percentages by highest percentage', () => {
     const languagePercentages = {
       JavaScript: 200,
       TypeScript: 300, 
@@ -76,16 +76,14 @@ describe('github dashboard', () => {
       Shell: 500,
     };
 
-    const result = sortLanguagePercentages(languagePercentages);
-    // using keys since snapshots don't preserve object property order
-    const resultKeys = Object.keys(result);
-    const expectedResult = ['Shell', 'TypeScript', 'JavaScript', 'Python'];
+    const languagesAndPercentages = sortLanguagePercentages(languagePercentages);
 
-    expect(resultKeys).toEqual(expectedResult);
-    
-    const languagePercentagesKeys = Object.keys(languagePercentages);
+    const expectedLanguagesAndPercentages = {
+      languages: ['Shell', 'TypeScript', 'JavaScript', 'Python'],
+      numericalDataInDescendingOrder: [500, 300, 200, 100]
+    };
 
-    expect(resultKeys).not.toEqual(languagePercentagesKeys);
+    expect(languagesAndPercentages).toEqual(expectedLanguagesAndPercentages);
   })
 });
 

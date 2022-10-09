@@ -27,15 +27,16 @@ const options = {
 
 class PieChart extends Component {
   componentDidMount() {
-    const sortedLanguagePercentageData = Object.values(sortLanguagePercentages(this.props.langTotals))
+    const { languages, numericalDataInDescendingOrder } = sortLanguagePercentages(this.props.langTotals)
+    
     const chart = new Chart(this.canvas, {
       type: 'pie',
       options,
       data: {
-        labels: Object.keys(this.props.langTotals),
+        labels: languages,
         datasets: [{
           backgroundColor: ['rgb(53, 222, 113)', 'rgb(171, 102, 255)', 'rgb(70, 124, 255)', 'rgb(255, 206, 10)', 'rgb(255, 10, 214)'],
-          data: sortedLanguagePercentageData,
+          data: numericalDataInDescendingOrder,
           borderColor: 'black',
           borderWidth: 2
         }]

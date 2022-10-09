@@ -31,9 +31,13 @@ export const sortLanguagePercentages = (languagePercentages) => {
     (a, b) =>
       b[1] - a[1]
   );
-  // reconstitute object in order
-  return sortedLanguagePercentages.reduce((accumulator, current) => ({
-    ...accumulator,
-    [current[0]]: current[1],
-  }), {});
+
+  return sortedLanguagePercentages.reduce((acc, [language, percentage]) => ({
+    languages: [...acc.languages, language],
+    numericalDataInDescendingOrder: [...acc.numericalDataInDescendingOrder, percentage]
+    
+  }), {
+    languages: [],
+    numericalDataInDescendingOrder: []
+  })
 };
